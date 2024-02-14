@@ -1,3 +1,4 @@
+import 'package:budaya_jogja/utils/theme.dart';
 import 'package:budaya_jogja/utils/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,13 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      themeMode: Get.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       translations: GlobalTranslation(),
       locale: Locale("en_US"),
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: HomePage(),
     );
   }

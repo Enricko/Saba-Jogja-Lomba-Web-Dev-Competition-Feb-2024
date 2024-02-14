@@ -1,16 +1,82 @@
 import 'dart:async';
+import 'dart:js';
 
+import 'package:budaya_jogja/utils/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
+  final controllerTheme = Get.put(ThemeController());
   final controllerHome = Get.put(HomePageController());
+  final controllerNavbar = Get.put(NavbarController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(120),
+        child: Obx(
+          () => AppBar(
+            automaticallyImplyLeading: controllerNavbar.scrollBool(),
+            backgroundColor: controllerNavbar.scrollBool()
+                ? Colors.transparent
+                : context.theme.appBarTheme.backgroundColor,
+            toolbarHeight: 120,
+            title: Center(
+              child: Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset(
+                      "assets/logo.png",
+                      width: context.width > 600 ? 150 : 100,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      NavbarButton(context: context, onTap: () {}, text: "HISTORY"),
+                      NavbarButton(context: context, onTap: () {}, text: "AKSARA"),
+                      NavbarButton(context: context, onTap: () {}, text: "CULTURE"),
+                      NavbarButton(context: context, onTap: () {}, text: "DIVERSITY"),
+                      NavbarButton(context: context, onTap: () {}, text: "ABOUT US"),
+                    ],
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // ElevatedButton(
+                        //   onPressed: () {
+                        //     Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+                        //   },
+                        //   child: Text("Test"),
+                        // ),
+                        CustomAdvanceSwitch(
+                          controller: controllerTheme.controller.value,
+                          activeChild: Icon(Icons.light_mode),
+                          inactiveChild: Icon(Icons.dark_mode),
+                          activeColor: Color.fromARGB(255, 116, 173, 185),
+                        )
+                        // if (context.width > 800) NavbarButton(onTap: () {}, text: "Tsds"),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
+        controller: controllerNavbar.pageScrollController,
+        padding: EdgeInsets.zero,
         child: Column(
           children: [
             Container(
@@ -141,12 +207,93 @@ class HomePage extends StatelessWidget {
             Container(
               height: context.height,
               width: context.width,
-              color: Colors.black,
             )
           ],
         ),
       ),
     );
+  }
+
+  Widget NavbarButton({
+    required BuildContext context,
+    required VoidCallback onTap,
+    required String text,
+  }) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 4.5),
+      child: GestureDetector(
+        onTap: onTap,
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            child: Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    text,
+                    style: context.theme.textTheme.titleMedium!.copyWith(
+                      color: controllerNavbar.scrollBool() ? Colors.black : null,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NavbarController extends GetxController {
+  late ScrollController pageScrollController;
+  var scrollOffset = 0.0.obs;
+
+  // double scaleScroll() {
+  //   return (1.5 -
+  //       ((scrollOffset.value >= 0 && scrollOffset.value <= 20 ? scrollOffset.value / 6.6 : 2) /
+  //           10));
+  // }
+
+  bool scrollBool() {
+    return scrollOffset.value >= 0 && scrollOffset.value <= 20;
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    pageScrollController = ScrollController();
+    pageScrollController.addListener(() {
+      scrollOffset.value = pageScrollController.offset;
+    });
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    pageScrollController.dispose();
+  }
+}
+
+class ThemeController extends GetxController {
+  var _isDarkMode = true.obs;
+
+  final controller = ValueNotifier<bool>(true).obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    controller.value.addListener(() {
+      if (controller.value.value) {
+        _isDarkMode.value = true;
+      } else {
+        _isDarkMode.value = false;
+      }
+      Get.changeTheme(_isDarkMode.value ? ThemeData.light() : ThemeData.dark());
+    });
   }
 }
 
@@ -229,8 +376,6 @@ class HomePageController extends GetxController with SingleGetTickerProviderMixi
 
     _timer = Timer.periodic(Duration(seconds: 5), (timer) {
       _currentIndex.value = (_currentIndex.value + 1) % _texts.length;
-      _controllerTitle.reset();
-      _controllerTitle.forward();
     });
 
     _animationTitle = Tween<Offset>(
