@@ -42,6 +42,14 @@ class _CustomAdvanceSwitchState extends State<CustomAdvanceSwitch> {
         width: 24,
         decoration: BoxDecoration(
           color: Colors.white,
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              offset: Offset(2, 2),
+              blurRadius: 4,
+              spreadRadius: 0,
+            ),
+          ],
           borderRadius: BorderRadius.circular(
             widget.thumbRadius,
           ),
