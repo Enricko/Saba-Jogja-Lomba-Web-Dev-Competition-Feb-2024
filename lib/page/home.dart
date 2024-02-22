@@ -1,5 +1,6 @@
 import "dart:math" as math;
 import 'package:budaya_jogja/controller/translation.dart';
+import 'package:budaya_jogja/page/section/home/deskripsi_kebudayaan.dart';
 import 'package:budaya_jogja/page/section/home/mountain.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
@@ -373,6 +374,8 @@ class HomePage extends StatelessWidget {
             Upacara(),
             Mountain(),
             Journey(),
+            DeskripsiKebudayaan(),
+            Culinary(),
           ],
         ),
       ),

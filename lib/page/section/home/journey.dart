@@ -37,29 +37,19 @@ class Journey extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'region_of'.tr,
-                        style: TextStyle(
-                          color: Color(0xFFFF634F),
-                          fontSize: 18,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                      Text(
-                        'Yogyakarta',
+                        'journey_title'.tr,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 50,
-                          fontFamily: 'JawaPalsu',
-                          fontWeight: FontWeight.w400,
+                          fontSize: 64,
+                            fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w800,
                           height: 0,
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Text(
-                          "about_yogya".tr,
+                          "journey_description".tr,
                           style: TextStyle(
                             color: Color(0xFF1E1E1E),
                             fontSize: 18,
