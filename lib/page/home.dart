@@ -1,12 +1,18 @@
+import "dart:math" as math;
 import 'package:budaya_jogja/controller/translation.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_ui/responsive_ui.dart';
 
 import '../controller/homepage.dart';
 import '../controller/navbar.dart';
 import '../controller/theme.dart';
 import '../utils/button.dart';
+import 'section/home/about.dart';
+import 'section/home/boso_jowo.dart';
+import 'section/home/panguripan.dart';
+import 'section/home/upacara.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -15,6 +21,17 @@ class HomePage extends StatelessWidget {
   final controllerHome = Get.put(HomePageController());
   final controllerNavbar = Get.put(NavbarController());
   final controllerTranslate = Get.put(TranslateController());
+
+  List<String> gallery = [
+    "assets/image1.png",
+    "assets/image2.png",
+    "assets/image3.png",
+    "assets/image4.png",
+    "assets/image5.png",
+    "assets/image6.png",
+    "assets/image7.png",
+    "assets/image8.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +82,10 @@ class HomePage extends StatelessWidget {
                             initialValue: controllerTranslate.selectedLanguage.value,
                             child: RichText(
                               textAlign: TextAlign.center,
-                              text: controllerTranslate
-                                  .changeWidget[controllerTranslate.selectedLanguage.value]!,
+                              text: controllerTranslate.setWidget(
+                                context,
+                                controllerTranslate.selectedLanguage.value,
+                              ),
                             ),
                             onSelected: (String item) {
                               controllerTranslate.onChange(item);
@@ -177,73 +196,75 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               height: context.width <= 1024
-                  ? (context.width <= 600 ? context.height * .55 : context.height * .85)
+                  ? (context.width <= 600 ? context.height * .6 : context.height * .85)
                   : context.height,
               color: Color(0xffB9E8F2),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: SlideTransition(
-                      position: controllerHome.animationCloud1,
-                      child: Container(
-                        width: context.width * 1,
-                        height: 350,
-                        alignment: Alignment.centerLeft,
-                        child: Image.asset(
-                          "assets/awan1.png",
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: SlideTransition(
-                      position: controllerHome.animationCloud2,
-                      child: Container(
-                        width: context.width * 1,
-                        height: 350,
-                        alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          "assets/awan2.png",
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: SlideTransition(
-                      position: controllerHome.animationCloud3,
-                      child: Container(
-                        width: context.width * 1,
-                        height: 350,
-                        alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          "assets/awan3.png",
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: SlideTransition(
-                      position: controllerHome.animationTitle,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
+              child: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                return Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: SlideTransition(
+                        position: controllerHome.animationCloud1,
                         child: Container(
-                          width: context.width * .5,
-                          height: context.height * 0.5,
-                          child: Center(
-                            child: Obx(
-                              () => Text(
-                                '${controllerHome.texts[controllerHome.currentIndex.value]}',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: 'JawaPalsu',
-                                  color: Colors.black,
-                                  fontSize: context.width * .1,
+                          width: context.width * 1,
+                          height: 350,
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset(
+                            "assets/awan1.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: SlideTransition(
+                        position: controllerHome.animationCloud2,
+                        child: Container(
+                          width: context.width * 1,
+                          height: 350,
+                          alignment: Alignment.centerRight,
+                          child: Image.asset(
+                            "assets/awan2.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: SlideTransition(
+                        position: controllerHome.animationCloud3,
+                        child: Container(
+                          width: context.width * 1,
+                          height: 350,
+                          alignment: Alignment.centerRight,
+                          child: Image.asset(
+                            "assets/awan3.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: SlideTransition(
+                        position: controllerHome.animationTitle,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Container(
+                            width: context.width * .5,
+                            height: context.height * 0.5,
+                            child: Center(
+                              child: Obx(
+                                () => Text(
+                                  '${controllerHome.texts[controllerHome.currentIndex.value]}',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'JawaPalsu',
+                                    color: Colors.black,
+                                    fontSize: context.width * .1,
+                                  ),
                                 ),
                               ),
                             ),
@@ -251,59 +272,130 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SlideTransition(
-                      position: controllerHome.animationCandi,
-                      child: Container(
-                        width: context.width * .33,
-                        height: context.height * .53,
-                        alignment: Alignment.bottomLeft,
-                        child: Image.asset(
-                          "assets/candi.png",
-                          fit: BoxFit.scaleDown,
+                    Positioned(
+                      bottom: 0,
+                      left: context.width * .1,
+                      child: SlideTransition(
+                        position: controllerHome.animationGedungPutih,
+                        child: Container(
+                          width: context.width * .35,
+                          height: context.height * 1,
+                          alignment: Alignment.bottomCenter,
+                          child: Image.asset(
+                            "assets/gedung putih.png",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: SlideTransition(
-                      position: controllerHome.animationTugu,
-                      child: Container(
-                        width: context.width * .33,
-                        height: context.height * .7,
+                    Positioned(
+                      bottom: 0,
+                      right: context.width * .1,
+                      child: Align(
                         alignment: Alignment.bottomCenter,
-                        child: Image.asset(
-                          "assets/tugu.png",
-                          fit: BoxFit.scaleDown,
+                        child: SlideTransition(
+                          position: controllerHome.animationBni,
+                          child: Container(
+                            width: context.width * .35,
+                            height: context.height * 1,
+                            alignment: Alignment.bottomCenter,
+                            child: Transform(
+                              alignment: Alignment.center,
+                              transform: Matrix4.rotationY(math.pi),
+                              child: Image.asset(
+                                "assets/gedung putih.png",
+                                fit: BoxFit.scaleDown,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: SlideTransition(
-                      position: controllerHome.animationBeringharjo,
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: SlideTransition(
+                        position: controllerHome.animationCandi,
+                        child: Container(
+                          width: context.width * .33,
+                          height: context.height * .8,
+                          alignment: Alignment.bottomLeft,
+                          child: Image.asset(
+                            "assets/candi.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: SlideTransition(
+                        position: controllerHome.animationTugu,
+                        child: Container(
+                          width: context.width * .33,
+                          height: context.height * 1,
+                          alignment: Alignment.bottomCenter,
+                          child: Image.asset(
+                            "assets/tugu.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: SlideTransition(
+                        position: controllerHome.animationBeringharjo,
+                        child: Container(
+                          width: context.width * .33,
+                          height: context.height * .8,
+                          alignment: Alignment.bottomRight,
+                          child: Image.asset(
+                            "assets/beirngharjo.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
                       child: Container(
-                        width: context.width * .33,
-                        height: context.height * .7,
-                        alignment: Alignment.bottomRight,
-                        child: Image.asset(
-                          "assets/beirngharjo.png",
-                          fit: BoxFit.scaleDown,
+                        width: context.width,
+                        height: context.height * .4,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment(0.00, -1.0),
+                            end: Alignment(0, 1),
+                            colors: [Colors.white.withOpacity(0), Color(0x7F797979), Colors.black],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                );
+              }),
+            ),
+            About(),
+            Panguripan(),
+            BosoJowo(),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 50),
+              color: Color(0xffFDF6E0),
+              child: Row(
+                children: gallery.map((image) {
+                  return Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        image,
+                        filterQuality:FilterQuality.high,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
-            Container(
-              height: context.height,
-              width: context.width,
-            )
+            Upacara(),
           ],
         ),
       ),

@@ -8,7 +8,9 @@ class HomePageController extends GetxController with SingleGetTickerProviderMixi
   late AnimationController controllerTitle;
 
   late Animation<Offset> animationCandi;
+  late Animation<Offset> animationGedungPutih;
   late Animation<Offset> animationTugu;
+  late Animation<Offset> animationBni;
   late Animation<Offset> animationBeringharjo;
 
   late Animation<Offset> animationTitle;
@@ -44,7 +46,21 @@ class HomePageController extends GetxController with SingleGetTickerProviderMixi
       parent: controllerBuilding,
       curve: Curves.easeInOut,
     ));
+    animationGedungPutih = Tween<Offset>(
+      begin: Offset(0.0, 1.0),
+      end: Offset(0.0, 0.0),
+    ).animate(CurvedAnimation(
+      parent: controllerBuilding,
+      curve: Curves.easeInOut,
+    ));
     animationTugu = Tween<Offset>(
+      begin: Offset(0.0, 1.0),
+      end: Offset(0.0, 0.0),
+    ).animate(CurvedAnimation(
+      parent: controllerBuilding,
+      curve: Curves.easeInOut,
+    ));
+    animationBni = Tween<Offset>(
       begin: Offset(0.0, 1.0),
       end: Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
