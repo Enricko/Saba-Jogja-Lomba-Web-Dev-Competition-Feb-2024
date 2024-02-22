@@ -1,5 +1,6 @@
 import "dart:math" as math;
 import 'package:budaya_jogja/controller/translation.dart';
+import 'package:budaya_jogja/page/section/home/mountain.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,8 @@ import '../controller/theme.dart';
 import '../utils/button.dart';
 import 'section/home/about.dart';
 import 'section/home/boso_jowo.dart';
+import 'section/home/gallery.dart';
+import 'section/home/journey.dart';
 import 'section/home/panguripan.dart';
 import 'section/home/upacara.dart';
 
@@ -21,17 +24,6 @@ class HomePage extends StatelessWidget {
   final controllerHome = Get.put(HomePageController());
   final controllerNavbar = Get.put(NavbarController());
   final controllerTranslate = Get.put(TranslateController());
-
-  List<String> gallery = [
-    "assets/image1.png",
-    "assets/image2.png",
-    "assets/image3.png",
-    "assets/image4.png",
-    "assets/image5.png",
-    "assets/image6.png",
-    "assets/image7.png",
-    "assets/image8.png",
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -377,25 +369,10 @@ class HomePage extends StatelessWidget {
             About(),
             Panguripan(),
             BosoJowo(),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 50),
-              color: Color(0xffFDF6E0),
-              child: Row(
-                children: gallery.map((image) {
-                  return Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        image,
-                        filterQuality:FilterQuality.high,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
-            ),
+            Gallery(),
             Upacara(),
+            Mountain(),
+            Journey(),
           ],
         ),
       ),
