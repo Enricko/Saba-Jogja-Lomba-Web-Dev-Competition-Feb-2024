@@ -13,6 +13,8 @@ import '../controller/theme.dart';
 import '../utils/button.dart';
 import 'section/home/about.dart';
 import 'section/home/boso_jowo.dart';
+import 'section/home/culinary.dart';
+import 'section/home/footer.dart';
 import 'section/home/gallery.dart';
 import 'section/home/journey.dart';
 import 'section/home/panguripan.dart';
@@ -56,11 +58,12 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          NavbarButton(context: context, onTap: () {}, text: "navbar_history".tr),
-                          NavbarButton(context: context, onTap: () {}, text: "navbar_script".tr),
-                          NavbarButton(context: context, onTap: () {}, text: "navbar_culture".tr),
-                          NavbarButton(context: context, onTap: () {}, text: "navbar_diversity".tr),
-                          NavbarButton(context: context, onTap: () {}, text: "navbar_about_us".tr),
+                          Button().NavbarButton(context: context, onTap: () {}, text: "navbar_history".tr),
+                          Button().NavbarButton(context: context, onTap: () {}, text: "navbar_script".tr),
+                          DropdownButtonExample(title: "navbar_culture".tr.toUpperCase(),options: ["social_life","event","warisan"],),
+                          DropdownButtonExample(title: "travel".tr.toUpperCase(),options: ["places","kuliner"],),
+                          Button().NavbarButton(context: context, onTap: () {}, text: "navbar_galeri".tr),
+                          Button().NavbarButton(context: context, onTap: () {}, text: "navbar_about_us".tr),
                         ],
                       ),
                     ),
@@ -376,40 +379,8 @@ class HomePage extends StatelessWidget {
             Journey(),
             DeskripsiKebudayaan(),
             Culinary(),
+            Footer(),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget NavbarButton({
-    required BuildContext context,
-    required VoidCallback onTap,
-    required String text,
-  }) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 4.5),
-      child: GestureDetector(
-        onTap: onTap,
-        child: MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: AnimatedContainer(
-            duration: const Duration(seconds: 1),
-            child: Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    text.toUpperCase(),
-                    style: context.theme.textTheme.titleMedium!.copyWith(
-                      color: controllerNavbar.scrollBool() ? Colors.black : null,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

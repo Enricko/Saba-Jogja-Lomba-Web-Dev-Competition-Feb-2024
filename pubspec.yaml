@@ -42,6 +42,7 @@ dependencies:
   responsive_ui: ^3.0.1
   loop_page_view: ^1.2.5
   flutter_rating_bar: ^4.0.1
+  flutter_inset_box_shadow: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,16 @@ flutter:
   assets:
     - assets/
     - assets/journey/
+    - assets/culinary/
+    - assets/culinary/bakpia.png
+    - assets/culinary/brongkos.png
+    - assets/culinary/geblek.png
+    - assets/culinary/gudeg.png
+    - assets/culinary/sate_kelatak.png
+    - assets/culinary/wedang_ronde.png
+    - assets/footer/
+    - assets/footer/image 56.png
+    - assets/footer/image 57.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

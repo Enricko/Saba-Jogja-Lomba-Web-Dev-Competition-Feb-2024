@@ -6,7 +6,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Journey extends StatelessWidget {
   Journey({super.key});
-  var controller = Get.put(CarouselController());
+  var controller = Get.put(CarouselJourneyController());
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class Journey extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 64,
-                            fontFamily: 'Poppins',
+                          fontFamily: 'Poppins',
                           fontWeight: FontWeight.w800,
                           height: 0,
                         ),
@@ -98,6 +98,7 @@ class Journey extends StatelessWidget {
                     itemCount: controller.journeyList.value.length,
                     controller: controller._pageController.value,
                     scrollDirection: Axis.horizontal,
+                    pageSnapping: false,
                     itemBuilder: (context, index) {
                       var data = controller.journeyList.value[index];
                       return HoverScaleContainer(
@@ -276,7 +277,7 @@ class _HoverScaleContainerState extends State<HoverScaleContainer> {
   }
 }
 
-class CarouselController extends GetxController {
+class CarouselJourneyController extends GetxController {
   Rx<LoopPageController?> _pageController = Rx<LoopPageController?>(null);
   var _currentPage = 0.obs;
   RxList<RxMap> journeyList = [
@@ -353,7 +354,7 @@ class CarouselController extends GetxController {
   void onInit() {
     super.onInit();
     _pageController.value =
-        LoopPageController(initialPage: _currentPage.value, viewportFraction: 1 / 3);
+        LoopPageController(initialPage: _currentPage.value, viewportFraction: 1 / 2);
   }
 
   @override

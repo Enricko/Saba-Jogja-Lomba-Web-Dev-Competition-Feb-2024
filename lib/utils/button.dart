@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
+import 'package:get/get.dart';
+
+import '../controller/navbar.dart';
 
 class CustomAdvanceSwitch extends StatefulWidget {
   final double radius;
@@ -56,6 +59,95 @@ class _CustomAdvanceSwitchState extends State<CustomAdvanceSwitch> {
         ),
       ),
       controller: widget.controller,
+    );
+  }
+}
+
+class Button {
+  final controllerNavbar = Get.find<NavbarController>();
+  Widget NavbarButton({
+    required BuildContext context,
+    required VoidCallback onTap,
+    required String text,
+  }) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 4.5),
+      child: GestureDetector(
+        onTap: onTap,
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            child: Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    text.toUpperCase(),
+                    style: context.theme.textTheme.titleMedium!.copyWith(
+                      color: controllerNavbar.scrollBool() ? Colors.black : null,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class DropdownButtonExample extends StatefulWidget {
+  const DropdownButtonExample({super.key, required this.options, required this.title});
+  final List<String> options;
+  final String title;
+
+  @override
+  State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
+}
+
+class _DropdownButtonExampleState extends State<DropdownButtonExample> {
+  final controllerNavbar = Get.find<NavbarController>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 135,
+      margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 7),
+      color: Colors.transparent,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: DropdownButton<String>(
+        focusColor: Colors.transparent,
+        onChanged: (String? value) {
+          setState(() {
+            // dropdownValue = value!;
+          });
+        },
+        hint: Text(
+          widget.title.toUpperCase(),
+          style: context.theme.textTheme.titleMedium!.copyWith(
+            color: controllerNavbar.scrollBool() ? Colors.black : null,
+          ),
+        ),
+        underline: const SizedBox(),
+        isExpanded: true,
+        style: TextStyle(color: context.isDarkMode ? Colors.white : Colors.black),
+        dropdownColor: context.isDarkMode ? Colors.black : Colors.white,
+        icon: Icon(
+          Icons.keyboard_arrow_down,
+          color: controllerNavbar.scrollBool()
+              ? Colors.black
+              : (context.isDarkMode ? Colors.white : Colors.black),
+        ),
+        items: widget.options.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value.tr.toUpperCase()),
+          );
+        }).toList(),
+      ),
     );
   }
 }
