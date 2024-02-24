@@ -63,10 +63,10 @@ class Footer extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.symmetric(vertical: 15),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Wrap(
+                              // mainAxisSize: MainAxisSize.min,
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 FooterButton(
                                   context: context,
@@ -96,7 +96,7 @@ class Footer extends StatelessWidget {
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     FooterButton(
@@ -164,7 +164,7 @@ class Footer extends StatelessWidget {
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     FooterButton(
@@ -473,7 +473,8 @@ Widget FooterButton({
   required Text textWidget,
 }) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 4.5),
+    margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+    width: 150,
     child: GestureDetector(
       onTap: onTap,
       child: MouseRegion(
@@ -484,7 +485,7 @@ Widget FooterButton({
             alignment: AlignmentDirectional.center,
             children: [
               Align(
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 child: textWidget,
               ),
             ],

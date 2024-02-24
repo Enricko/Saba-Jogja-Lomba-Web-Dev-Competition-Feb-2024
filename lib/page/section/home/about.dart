@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
+import '../../../controller/navbar.dart';
+
 class About extends StatelessWidget {
-  const About({
+  About({
     super.key,
   });
+  final controllerNavbar = Get.find<NavbarController>();
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +133,11 @@ class About extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(18),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.offNamed("/history");
+                    controllerNavbar.scrollOffset.value = 0.0;
+
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
                             padding: MaterialStateProperty.all(EdgeInsets.all(25)),

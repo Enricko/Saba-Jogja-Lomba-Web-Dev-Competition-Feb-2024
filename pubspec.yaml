@@ -69,7 +69,37 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/aksara_jawa.png
+    - assets/awan1.png
+    - assets/awan2.png
+    - assets/awan3.png
+    - assets/beirngharjo.png
+    - assets/bni.png
+    - assets/candi.png
+    - assets/gedung putih.png
+    - assets/gunungan_kuning.png
+    - assets/image1.png
+    - assets/image2.png
+    - assets/image3.png
+    - assets/image4.png
+    - assets/image5.png
+    - assets/image6.png
+    - assets/image7.png
+    - assets/kuda.png
+    - assets/logo.png
+    - assets/mountain.png
+    - assets/panguripan.png
+    - assets/pattern_topright.png
+    - assets/pattern_bottomleft.png
+    - assets/tugu.png
+    - assets/upacara.png
     - assets/journey/
+    - assets/journey/kampoeng_ketandan.png
+    - assets/journey/kampung_wisata_tamansari.jpeg
+    - assets/journey/kraton.png
+    - assets/journey/malioboro.jpeg
+    - assets/journey/pantai_parangtritis.jpeg
+    - assets/journey/prambanan.png
     - assets/culinary/
     - assets/culinary/bakpia.png
     - assets/culinary/brongkos.png

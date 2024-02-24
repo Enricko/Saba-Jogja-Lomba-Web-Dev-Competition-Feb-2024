@@ -121,9 +121,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       child: DropdownButton<String>(
         focusColor: Colors.transparent,
         onChanged: (String? value) {
-          setState(() {
             // dropdownValue = value!;
-          });
         },
         hint: Text(
           widget.title.toUpperCase(),

@@ -8,10 +8,24 @@ class Culinary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 75),
+      padding: EdgeInsets.symmetric(vertical: 75),
       width: double.infinity,
+      color: Color(0xffFDF6E0),
       child: Column(
         children: [
+          Text(
+            'culinary_title'.tr,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 50.80,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w700,
+              height: 0,
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
           Wrap(
             alignment: WrapAlignment.center,
             children: controller.culinaryList.value.map((e) {

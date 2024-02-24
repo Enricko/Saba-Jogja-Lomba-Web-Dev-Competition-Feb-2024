@@ -22,5 +22,6 @@ class NavbarController extends GetxController {
   void onClose() {
     super.onClose();
     pageScrollController.dispose();
+    scrollOffset.value = 0.0;
   }
 }
