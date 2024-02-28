@@ -16,99 +16,105 @@ class Journey extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          color: Color(0xffFDF6E0),
           alignment: Alignment.center,
-          child: Responsive(
-            crossAxisAlignment: WrapCrossAlignment.center,
+          child: Column(
             children: [
-              Div(
-                divison: Division(
-                  colXL: 6,
-                  colL: 6,
-                  colM: 10,
-                  colS: 10,
-                  colXS: 10,
-                ),
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
+              Responsive(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  Div(
+                    divison: Division(
+                      colXL: 4,
+                      colL: 4,
+                      colM: 10,
+                      colS: 10,
+                      colXS: 10,
+                    ),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                      child: Text(
                         'journey_title'.tr,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 64,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w800,
+                        style: context.theme.textTheme.titleLarge!.copyWith(
+                          fontFamily: "JawaPalsu",
+                          fontSize: 50,
+                          fontWeight: FontWeight.w400,
                           height: 0,
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 25),
-                        child: Text(
-                          "journey_description".tr,
-                          style: TextStyle(
-                            color: Color(0xFF1E1E1E),
-                            fontSize: 18,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(18),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
-                            padding: MaterialStateProperty.all(EdgeInsets.all(25)),
-                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30)),
-                          ),
-                          child: Text(
-                            "show_more".tr.toUpperCase(),
-                            style: TextStyle(
-                              color: Color(0xFFECECEC),
-                              fontSize: 16.88,
-                              fontFamily: 'Archivo Black',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
+                    ),
+                  ),
+                  Div(
+                    divison: Division(
+                      colXL: 6,
+                      colL: 6,
+                      colM: 10,
+                      colS: 10,
+                      colXS: 10,
+                    ),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 25),
+                            child: Text(
+                              "journey_description".tr,
+                              textAlign: TextAlign.justify,
+                              style: context.theme.textTheme.bodyMedium!.copyWith(
+                                fontSize: 18,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
-                        ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(18),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
+                                padding: MaterialStateProperty.all(EdgeInsets.all(25)),
+                                textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30)),
+                              ),
+                              child: Text(
+                                "show_more".tr.toUpperCase(),
+                                style: TextStyle(
+                                  color: Color(0xFFECECEC),
+                                  fontSize: 16.88,
+                                  fontFamily: 'Archivo Black',
+                                  fontWeight: FontWeight.w700,
+                                  height: 0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-              Div(
-                divison: Division(
-                  colXL: 5,
-                  colL: 11,
-                  colM: 11,
-                  colS: 11,
-                  colXS: 11,
-                ),
-                child: Container(
-                  height: context.height * .7,
-                  color: Colors.transparent,
-                  child: LoopPageView.builder(
-                    itemCount: controller.journeyList.value.length,
-                    controller: controller._pageController.value,
-                    scrollDirection: Axis.horizontal,
-                    pageSnapping: false,
-                    itemBuilder: (context, index) {
-                      var data = controller.journeyList.value[index];
-                      return HoverScaleContainer(
-                        image: data['image'],
-                        title: data['title'],
-                        location: data['location'],
-                        rating: data['rating'],
-                      );
-                    },
-                  ),
+              SizedBox(height: 50,),
+              Container(
+                height: context.height * .7,
+                color: Colors.transparent,
+                child: LoopPageView.builder(
+                  itemCount: controller.journeyList.value.length,
+                  controller: controller._pageController.value,
+                  scrollDirection: Axis.horizontal,
+                  pageSnapping: false,
+                  itemBuilder: (context, index) {
+                    var data = controller.journeyList.value[index];
+                    return HoverScaleContainer(
+                      image: data['image'],
+                      title: data['title'],
+                      location: data['location'],
+                      rating: data['rating'],
+                    );
+                  },
                 ),
               ),
             ],
@@ -354,7 +360,7 @@ class CarouselJourneyController extends GetxController {
   void onInit() {
     super.onInit();
     _pageController.value =
-        LoopPageController(initialPage: _currentPage.value, viewportFraction: 1 / 2);
+        LoopPageController(initialPage: _currentPage.value, viewportFraction: 1 / 3);
   }
 
   @override

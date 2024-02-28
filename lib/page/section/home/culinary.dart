@@ -10,7 +10,6 @@ class Culinary extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 75),
       width: double.infinity,
-      color: Color(0xffFDF6E0),
       child: Column(
         children: [
           Text(

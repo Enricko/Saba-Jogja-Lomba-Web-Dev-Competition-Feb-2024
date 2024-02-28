@@ -11,21 +11,9 @@ class BosoJowo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-          bottom: 0,
-          left: 0,
-          height: context.height * 1,
-          child: Container(
-            alignment: Alignment.bottomLeft,
-            child: Image.asset(
-              "assets/pattern_bottomleft.png",
-            ),
-          ),
-        ),
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          color: Color(0xffFDF6E0),
           alignment: Alignment.center,
           child: Responsive(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -97,10 +85,9 @@ class BosoJowo extends StatelessWidget {
                       Text(
                         'Boso Jawa',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
+                        style: context.theme.textTheme.titleLarge!.copyWith(
+                          fontFamily: "JawaPalsu",
                           fontSize: 50,
-                          fontFamily: 'JawaPalsu',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -109,9 +96,9 @@ class BosoJowo extends StatelessWidget {
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Text(
                           "bosojowo".tr,
-                          style: TextStyle(
-                            color: Color(0xFF1E1E1E),
-                            fontSize: 18,
+                          textAlign: TextAlign.justify,
+                          style: context.theme.textTheme.bodyMedium!.copyWith(
+                            fontSize: 16,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                           ),

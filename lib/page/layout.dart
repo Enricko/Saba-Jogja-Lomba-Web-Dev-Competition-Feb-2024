@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controller/navbar.dart';
+import '../controller/theme.dart';
 import 'section/navbar.dart';
 
 class Layout extends StatelessWidget {
   Layout({super.key, required this.child});
   final Widget child;
   final controllerNavbar = Get.find<NavbarController>();
+  final controllerTheme = Get.find<ThemeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,20 @@ class Layout extends StatelessWidget {
       body: SingleChildScrollView(
         controller: controllerNavbar.pageScrollController,
         padding: EdgeInsets.zero,
-        child: Container(color: Color(0xffFDF6E0), child: child),
+        child: Obx(
+          () => Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: controllerTheme.isDarkMode.value ? Color(0xffFDF6E0) : Color(0xff1E1E1E),
+              image: DecorationImage(
+                image: AssetImage("assets/pattern.png"),
+                fit: BoxFit.cover,
+                filterQuality: FilterQuality.high
+              ),
+            ),
+            child: child,
+          ),
+        ),
       ),
     );
   }

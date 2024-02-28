@@ -89,8 +89,7 @@ flutter:
     - assets/logo.png
     - assets/mountain.png
     - assets/panguripan.png
-    - assets/pattern_topright.png
-    - assets/pattern_bottomleft.png
+    - assets/pattern.png
     - assets/tugu.png
     - assets/upacara.png
     - assets/journey/

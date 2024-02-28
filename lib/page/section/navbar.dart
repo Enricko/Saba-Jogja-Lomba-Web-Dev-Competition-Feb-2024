@@ -21,7 +21,7 @@ class Navbar extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: controllerNavbar.scrollBool()
             ? Colors.transparent
-            : context.theme.appBarTheme.backgroundColor,
+            : Get.theme.appBarTheme.backgroundColor,
         toolbarHeight: 120,
         title: Center(
           child: Stack(

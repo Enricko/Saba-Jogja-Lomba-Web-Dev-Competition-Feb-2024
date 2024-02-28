@@ -18,7 +18,6 @@ class Gallery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 50),
-      color: Color(0xffFDF6E0),
       child: Row(
         children: gallery.map((image) {
           return Expanded(

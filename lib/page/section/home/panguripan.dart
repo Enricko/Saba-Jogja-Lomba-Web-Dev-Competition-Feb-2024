@@ -14,7 +14,6 @@ class Panguripan extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          color: Color(0xffFDF6E0),
           alignment: Alignment.center,
           child: Responsive(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -85,12 +84,11 @@ class Panguripan extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Panguripan',
+                        'social_life'.tr,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
+                        style: context.theme.textTheme.titleLarge!.copyWith(
+                          fontFamily: "JawaPalsu",
                           fontSize: 50,
-                          fontFamily: 'JawaPalsu',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -99,9 +97,9 @@ class Panguripan extends StatelessWidget {
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Text(
                           "panguripan".tr,
-                          style: TextStyle(
-                            color: Color(0xFF1E1E1E),
-                            fontSize: 18,
+                          textAlign: TextAlign.justify,
+                          style: context.theme.textTheme.bodyMedium!.copyWith(
+                            fontSize: 16,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                           ),

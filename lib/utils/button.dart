@@ -131,8 +131,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         ),
         underline: const SizedBox(),
         isExpanded: true,
-        style: TextStyle(color: context.isDarkMode ? Colors.white : Colors.black),
-        dropdownColor: context.isDarkMode ? Colors.black : Colors.white,
+        style: context.theme.textTheme.titleMedium,
+        dropdownColor: context.theme.scaffoldBackgroundColor,
         icon: Icon(
           Icons.keyboard_arrow_down,
           color: controllerNavbar.scrollBool()

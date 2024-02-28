@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class ThemeController extends GetxController {
-  var _isDarkMode = true.obs;
+  var isDarkMode = true.obs;
 
   final controller = ValueNotifier<bool>(true).obs;
 
@@ -11,18 +11,24 @@ class ThemeController extends GetxController {
   void onInit() {
     super.onInit();
     if (GetStorage().read("isDarkMode") != null) {
-      _isDarkMode.value == GetStorage().read("isDarkMode");
+      isDarkMode.value = GetStorage().read("isDarkMode");
       controller.value.value = GetStorage().read("isDarkMode");
-      Get.changeTheme(GetStorage().read("isDarkMode") ? ThemeData.light() : ThemeData.dark());
+      // Get.changeTheme(isDarkMode.value ? ThemeData.light() : ThemeData.dark());
     }
     controller.value.addListener(() {
       if (controller.value.value) {
-        _isDarkMode.value = true;
+        isDarkMode.value = true;
       } else {
-        _isDarkMode.value = false;
+        isDarkMode.value = false;
       }
-      GetStorage().write("isDarkMode", _isDarkMode.value);
-      Get.changeTheme(GetStorage().read("isDarkMode") ? ThemeData.light() : ThemeData.dark());
+      GetStorage().write("isDarkMode", isDarkMode.value);
+      Get.changeThemeMode(GetStorage().read("isDarkMode") ? ThemeMode.light : ThemeMode.dark);
     });
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    controller.value.dispose();
   }
 }

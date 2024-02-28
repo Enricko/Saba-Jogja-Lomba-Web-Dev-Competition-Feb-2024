@@ -179,7 +179,7 @@ class GlobalTranslation extends Translations {
           "navbar_script": "naskah",
           "navbar_culture": "budaya",
           "navbar_galeri": "galeri",
-          "social_life": "urip sosial",
+          "social_life": "Panguripan",
           "navbar_about_us": "babagan awake dhewe",
           "event": "acara",
           "warisan": "warisan",

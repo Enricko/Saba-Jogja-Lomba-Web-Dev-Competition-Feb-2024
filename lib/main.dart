@@ -23,9 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       themeMode: (GetStorage().read("isDarkMode") != null ? GetStorage().read("isDarkMode") : false)
-          ? ThemeMode.dark
-          : ThemeMode.light,
+          ? ThemeMode.light
+          : ThemeMode.dark,
       translations: GlobalTranslation(),
       locale:
           Locale(GetStorage().read("translate") != null ? GetStorage().read("translate") : "en_US"),

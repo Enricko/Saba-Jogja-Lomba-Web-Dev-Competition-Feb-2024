@@ -12,7 +12,6 @@ class DeskripsiKebudayaan extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          color: Color(0xffFDF6E0),
           alignment: Alignment.center,
           child: Responsive(
             alignment: WrapAlignment.spaceAround,

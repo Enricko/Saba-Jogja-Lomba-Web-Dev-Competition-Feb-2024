@@ -1,35 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
 import '../../../controller/navbar.dart';
+import '../../../controller/theme.dart';
 
 class About extends StatelessWidget {
   About({
     super.key,
   });
   final controllerNavbar = Get.find<NavbarController>();
+  final controllerTheme = Get.find<ThemeController>();
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.antiAlias,
       children: [
-        Positioned(
-          top: 0,
-          right: 0,
-          height: context.height * 1,
-          child: Container(
-            alignment: Alignment.topRight,
-            child: Image.asset(
-              "assets/pattern_topright.png",
-            ),
-          ),
-        ),
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          color: Color(0xffFDF6E0),
           alignment: Alignment.center,
           child: Responsive(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -110,10 +101,9 @@ class About extends StatelessWidget {
                       ),
                       Text(
                         'Yogyakarta',
-                        style: TextStyle(
-                          color: Colors.black,
+                        style: context.theme.textTheme.titleLarge!.copyWith(
+                          fontFamily: "JawaPalsu",
                           fontSize: 50,
-                          fontFamily: 'JawaPalsu',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -122,8 +112,8 @@ class About extends StatelessWidget {
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Text(
                           "about_yogya".tr,
-                          style: TextStyle(
-                            color: Color(0xFF1E1E1E),
+                          textAlign: TextAlign.justify,
+                          style: context.theme.textTheme.bodyMedium!.copyWith(
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
@@ -135,8 +125,7 @@ class About extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             Get.offNamed("/history");
-                    controllerNavbar.scrollOffset.value = 0.0;
-
+                            controllerNavbar.scrollOffset.value = 0.0;
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
