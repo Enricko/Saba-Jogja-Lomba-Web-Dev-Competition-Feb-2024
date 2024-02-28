@@ -1,16 +1,10 @@
-# budaya_jogja
+# Saba Jogja
 
-A new Flutter project.
+An apps that we built for Web Dev Competition in Indonesia University
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contribution
+<div style="display: flex;">
+  [![Enricko Putra Hartono](https://github.com/enricko.png?size=50)](https://github.com/enricko)
+  [![Satria Irfan Prayoga](https://github.com/irfanprayoga29.png?size=50)](https://github.com/irfanprayoga29)
+  [![Ulil Absor](https://github.com/ulilabzr.png?size=50)](https://github.com/ulilabzr)
+</div>
