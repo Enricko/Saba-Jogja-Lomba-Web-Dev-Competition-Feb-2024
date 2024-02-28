@@ -6,8 +6,9 @@ import '../controller/theme.dart';
 import 'section/navbar.dart';
 
 class Layout extends StatelessWidget {
-  Layout({super.key, required this.child});
+  Layout({super.key, required this.child,this.isShow = true});
   final Widget child;
+  final bool isShow;
   final controllerNavbar = Get.find<NavbarController>();
   final controllerTheme = Get.find<ThemeController>();
   @override
@@ -16,7 +17,9 @@ class Layout extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(120),
-        child: Navbar(),
+        child: Navbar(
+          isShow: isShow,
+        ),
       ),
       body: SingleChildScrollView(
         controller: controllerNavbar.pageScrollController,

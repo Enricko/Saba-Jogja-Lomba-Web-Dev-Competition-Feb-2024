@@ -69,6 +69,7 @@ class Button {
     required BuildContext context,
     required VoidCallback onTap,
     required String text,
+    required bool isShow,
   }) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: context.width * .1 / 4.5),
@@ -86,7 +87,7 @@ class Button {
                   child: Text(
                     text.toUpperCase(),
                     style: context.theme.textTheme.titleMedium!.copyWith(
-                      color: controllerNavbar.scrollBool() ? Colors.black : null,
+                      color: controllerNavbar.scrollBool() && isShow ? Colors.black : null,
                     ),
                   ),
                 ),
@@ -100,9 +101,11 @@ class Button {
 }
 
 class DropdownButtonExample extends StatefulWidget {
-  const DropdownButtonExample({super.key, required this.options, required this.title});
+  const DropdownButtonExample(
+      {super.key, required this.options, required this.title, required this.isShow});
   final List<String> options;
   final String title;
+  final bool isShow;
 
   @override
   State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
@@ -121,12 +124,12 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       child: DropdownButton<String>(
         focusColor: Colors.transparent,
         onChanged: (String? value) {
-            // dropdownValue = value!;
+          // dropdownValue = value!;
         },
         hint: Text(
           widget.title.toUpperCase(),
           style: context.theme.textTheme.titleMedium!.copyWith(
-            color: controllerNavbar.scrollBool() ? Colors.black : null,
+            color: controllerNavbar.scrollBool() && widget.isShow ? Colors.black : null,
           ),
         ),
         underline: const SizedBox(),
@@ -135,7 +138,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         dropdownColor: context.theme.scaffoldBackgroundColor,
         icon: Icon(
           Icons.keyboard_arrow_down,
-          color: controllerNavbar.scrollBool()
+          color: controllerNavbar.scrollBool() && widget.isShow
               ? Colors.black
               : (context.isDarkMode ? Colors.white : Colors.black),
         ),

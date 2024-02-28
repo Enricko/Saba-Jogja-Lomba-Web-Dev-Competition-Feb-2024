@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
 class DeskripsiKebudayaan extends StatelessWidget {
-  const DeskripsiKebudayaan({super.key});
+  const DeskripsiKebudayaan({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,6 @@ class DeskripsiKebudayaan extends StatelessWidget {
           width: context.width,
           alignment: Alignment.center,
           child: Responsive(
-            alignment: WrapAlignment.spaceAround,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               if (context.width < 897.0)
@@ -33,7 +34,7 @@ class DeskripsiKebudayaan extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.white,
                       image: DecorationImage(
-                        image: AssetImage("assets/upacara.png"),
+                        image: AssetImage("assets/event.png"),
                         fit: BoxFit.cover,
                       ),
                       boxShadow: [
@@ -68,21 +69,52 @@ class DeskripsiKebudayaan extends StatelessWidget {
                   colXS: 10,
                 ),
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  margin: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Text(
+                        'event'.tr,
+                        textAlign: TextAlign.center,
+                        style: context.theme.textTheme.titleLarge!.copyWith(
+                          fontFamily: "JawaPalsu",
+                          fontSize: 50,
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 25),
                         child: Text(
                           "deskripsi_kebudayaan".tr,
-                          style: TextStyle(
-                            color: Color(0xFF1E1E1E),
+                          textAlign: TextAlign.justify,
+                          style: context.theme.textTheme.bodyMedium!.copyWith(
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(18),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
+                            padding: MaterialStateProperty.all(EdgeInsets.all(25)),
+                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30)),
+                          ),
+                          child: Text(
+                            "show_more".tr.toUpperCase(),
+                            style: TextStyle(
+                              color: Color(0xFFECECEC),
+                              fontSize: 16.88,
+                              fontFamily: 'Archivo Black',
+                              fontWeight: FontWeight.w700,
+                              height: 0,
+                            ),
                           ),
                         ),
                       ),
@@ -106,7 +138,7 @@ class DeskripsiKebudayaan extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                       color: Colors.white,
                       image: DecorationImage(
-                        image: AssetImage("assets/upacara.png"),
+                        image: AssetImage("assets/event.png"),
                         fit: BoxFit.cover,
                       ),
                       boxShadow: [

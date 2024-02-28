@@ -6,6 +6,7 @@ import '../controller/homepage.dart';
 import '../controller/navbar.dart';
 import '../controller/theme.dart';
 import '../controller/translation.dart';
+import '../page/about_us.dart';
 import '../page/history.dart';
 
 class RouteList {
@@ -22,6 +23,14 @@ class RouteList {
     GetPage(
       name: "/history",
       page: () => History(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/about_us",
+      page: () => AboutUs(),
       binding: BindingsBuilder(() {
         Get.put(ThemeController());
         Get.put(TranslateController());

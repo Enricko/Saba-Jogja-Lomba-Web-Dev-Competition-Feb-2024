@@ -8,7 +8,8 @@ import '../../controller/translation.dart';
 import '../../utils/button.dart';
 
 class Navbar extends StatelessWidget {
-  Navbar({super.key});
+  Navbar({super.key,this.isShow = true});
+  final bool isShow;
 
   final controllerTheme = Get.find<ThemeController>();
   final controllerNavbar = Get.find<NavbarController>();
@@ -48,6 +49,7 @@ class Navbar extends StatelessWidget {
                     children: [
                       Button().NavbarButton(
                         context: context,
+                        isShow:isShow,
                         onTap: () {
                           Get.offNamed("/history");
                           controllerNavbar.scrollOffset.value = 0.0;
@@ -56,25 +58,33 @@ class Navbar extends StatelessWidget {
                       ),
                       Button().NavbarButton(
                         context: context,
+                        isShow:isShow,
                         onTap: () {},
                         text: "navbar_script".tr,
                       ),
                       DropdownButtonExample(
                         title: "navbar_culture".tr.toUpperCase(),
                         options: ["social_life", "event", "warisan"],
+                        isShow:isShow,
                       ),
                       DropdownButtonExample(
                         title: "travel".tr.toUpperCase(),
                         options: ["places", "kuliner"],
+                        isShow:isShow,
                       ),
                       Button().NavbarButton(
                         context: context,
+                        isShow:isShow,
                         onTap: () {},
                         text: "navbar_galeri".tr,
                       ),
                       Button().NavbarButton(
                         context: context,
-                        onTap: () {},
+                        isShow:isShow,
+                        onTap: () {
+                    Get.offNamed("/about_us");
+                    controllerNavbar.scrollOffset.value = 0.0;
+                        },
                         text: "navbar_about_us".tr,
                       ),
                     ],

@@ -69,6 +69,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/about_us.png
+    - assets/aksara_jawa.png
     - assets/aksara_jawa.png
     - assets/awan1.png
     - assets/awan2.png
@@ -76,6 +78,7 @@ flutter:
     - assets/beirngharjo.png
     - assets/bni.png
     - assets/candi.png
+    - assets/event.png
     - assets/gedung putih.png
     - assets/gunungan_kuning.png
     - assets/image1.png

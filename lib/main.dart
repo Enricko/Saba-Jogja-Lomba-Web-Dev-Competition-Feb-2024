@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      themeMode: (GetStorage().read("isDarkMode") != null ? GetStorage().read("isDarkMode") : false)
+      themeMode: (GetStorage().read("isDarkMode") != null ? GetStorage().read("isDarkMode") : true)
           ? ThemeMode.light
           : ThemeMode.dark,
       translations: GlobalTranslation(),

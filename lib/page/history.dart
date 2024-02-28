@@ -46,10 +46,9 @@ class History extends StatelessWidget {
                         ),
                         Text(
                           'Yogyakarta',
-                          style: TextStyle(
-                            color: Colors.black,
+                          style: context.theme.textTheme.titleLarge!.copyWith(
+                            fontFamily: "JawaPalsu",
                             fontSize: 50,
-                            fontFamily: 'JawaPalsu',
                             fontWeight: FontWeight.w400,
                             height: 0,
                           ),
@@ -65,10 +64,8 @@ class History extends StatelessWidget {
                     child: Text(
                       "history_yogya".tr,
                       textAlign: TextAlign.justify,
-                      maxLines: 20,
-                      style: TextStyle(
-                        color: Color(0xFF1E1E1E),
-                        fontSize: 16,
+                      style: context.theme.textTheme.bodyMedium!.copyWith(
+                        fontSize: 18,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),
@@ -95,10 +92,9 @@ class History extends StatelessWidget {
                         children: [
                           Text(
                             'Pre-Historic'.tr,
-                            style: TextStyle(
-                              color: Colors.black,
+                            style: context.theme.textTheme.titleLarge!.copyWith(
+                              fontFamily: "JawaPalsu",
                               fontSize: 50,
-                              fontFamily: 'JawaPalsu',
                               fontWeight: FontWeight.w400,
                               height: 0,
                             ),
@@ -114,10 +110,8 @@ class History extends StatelessWidget {
                     child: Text(
                       "prehistoric_desc".tr,
                       textAlign: TextAlign.justify,
-                      maxLines: 20,
-                      style: TextStyle(
-                        color: Color(0xFF1E1E1E),
-                        fontSize: 16,
+                      style: context.theme.textTheme.bodyMedium!.copyWith(
+                        fontSize: 18,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),
@@ -135,13 +129,12 @@ class History extends StatelessWidget {
                         children: [
                           Text(
                             'Pre-Historic'.tr,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 50,
-                              fontFamily: 'JawaPalsu',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
-                            ),
+                            style: context.theme.textTheme.titleLarge!.copyWith(
+                            fontFamily: "JawaPalsu",
+                            fontSize: 50,
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
                           ),
                         ],
                       ),

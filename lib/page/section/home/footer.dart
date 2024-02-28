@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
+import '../../../controller/navbar.dart';
+import '../../../controller/theme.dart';
 import '../../../utils/button.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({super.key});
+  Footer({super.key});
 
+  final controllerTheme = Get.find<ThemeController>();
+  final controllerNavbar = Get.find<NavbarController>();
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFE7DBB7),
+      color: controllerTheme.isDarkMode.value ? Color(0xFFE7DBB7) : Color(0xFF151515),
       width: double.infinity,
       child: Column(
         children: [
@@ -21,7 +25,7 @@ class Footer extends StatelessWidget {
             runAlignment: WrapAlignment.center,
             children: [
               Div(
-                divison: const Division(
+                divison: Division(
                   colXL: 8,
                   colL: 8,
                   colM: 12,
@@ -41,16 +45,22 @@ class Footer extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                "assets/logo.png",
-                                width: 150,
-                                height: 150,
+                              InkWell(
+                                onTap: () {
+                                  Get.offNamed("/");
+                                  controllerNavbar.scrollOffset.value = 0.0;
+                                },
+                                child: Image.asset(
+                                  "assets/logo.png",
+                                  width: 150,
+                                  height: 150,
+                                ),
                               ),
-                              const Text(
+                              Text(
                                 "“mlaku - mlaku nganti awakmu lesu”",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: context.theme.textTheme.titleLarge!.color,
                                   fontSize: 14,
                                   fontStyle: FontStyle.italic,
                                   fontFamily: 'Poppins',
@@ -58,11 +68,13 @@ class Footer extends StatelessWidget {
                                   height: 0,
                                 ),
                               ),
-                              SizedBox(height: 25,),
+                              SizedBox(
+                                height: 25,
+                              ),
                             ],
                           ),
                           Container(
-                            margin: const EdgeInsets.symmetric(vertical: 15),
+                            margin: EdgeInsets.symmetric(vertical: 15),
                             child: Wrap(
                               // mainAxisSize: MainAxisSize.min,
                               // mainAxisAlignment: MainAxisAlignment.start,
@@ -70,11 +82,14 @@ class Footer extends StatelessWidget {
                               children: [
                                 FooterButton(
                                   context: context,
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.offNamed("/history");
+                                    controllerNavbar.scrollOffset.value = 0.0;
+                                  },
                                   textWidget: Text(
                                     "navbar_history".tr.toUpperCase(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
+                                    style: TextStyle(
+                                      color: context.theme.textTheme.titleLarge!.color,
                                       fontSize: 14,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w800,
@@ -86,8 +101,8 @@ class Footer extends StatelessWidget {
                                   onTap: () {},
                                   textWidget: Text(
                                     "navbar_script".tr.toUpperCase(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
+                                    style: TextStyle(
+                                      color: context.theme.textTheme.titleLarge!.color,
                                       fontSize: 14,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w800,
@@ -104,15 +119,15 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "navbar_culture".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w800,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       height: 5,
                                     ),
                                     FooterButton(
@@ -120,15 +135,15 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "social_life".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       height: 5,
                                     ),
                                     FooterButton(
@@ -136,15 +151,15 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "event".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       height: 5,
                                     ),
                                     FooterButton(
@@ -152,8 +167,8 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "warisan".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w300,
@@ -172,15 +187,15 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "travel".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w800,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       height: 5,
                                     ),
                                     FooterButton(
@@ -188,15 +203,15 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "places".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       height: 5,
                                     ),
                                     FooterButton(
@@ -204,8 +219,8 @@ class Footer extends StatelessWidget {
                                       onTap: () {},
                                       textWidget: Text(
                                         "kuliner".tr.toUpperCase(),
-                                        style: const TextStyle(
-                                          color: Colors.black,
+                                        style: TextStyle(
+                                          color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w300,
@@ -219,8 +234,8 @@ class Footer extends StatelessWidget {
                                   onTap: () {},
                                   textWidget: Text(
                                     "navbar_galeri".tr.toUpperCase(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
+                                    style: TextStyle(
+                                      color: context.theme.textTheme.titleLarge!.color,
                                       fontSize: 14,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w800,
@@ -229,11 +244,14 @@ class Footer extends StatelessWidget {
                                 ),
                                 FooterButton(
                                   context: context,
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.offNamed("/about_us");
+                                    controllerNavbar.scrollOffset.value = 0.0;
+                                  },
                                   textWidget: Text(
                                     "navbar_about_us".tr.toUpperCase(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
+                                    style: TextStyle(
+                                      color: context.theme.textTheme.titleLarge!.color,
                                       fontSize: 14,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w800,
@@ -261,7 +279,7 @@ class Footer extends StatelessWidget {
                               Text(
                                 'Partner',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: context.theme.textTheme.titleLarge!.color,
                                   fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
@@ -282,7 +300,7 @@ class Footer extends StatelessWidget {
                               Text(
                                 'Download on App',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: context.theme.textTheme.titleLarge!.color,
                                   fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
@@ -307,7 +325,7 @@ class Footer extends StatelessWidget {
                               Text(
                                 'Follow us on',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: context.theme.textTheme.titleLarge!.color,
                                   fontSize: 16,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
@@ -367,7 +385,7 @@ class Footer extends StatelessWidget {
                 ),
               ),
               Div(
-                divison: const Division(
+                divison: Division(
                   colXL: 4,
                   colL: 4,
                   colM: 12,
@@ -375,44 +393,47 @@ class Footer extends StatelessWidget {
                   colXS: 12,
                 ),
                 child: Container(
-                  margin: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+                  margin: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         'Leave your Question and Comment below here!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: context.theme.textTheme.titleLarge!.color,
                           fontSize: 16,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600,
                           height: 0,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 25,
                       ),
                       NeumorphicInputField(
-                        prefixIcon: const Icon(Icons.person),
+                        prefixIcon: Icon(Icons.person, color: Colors.black),
                         text: "Name",
                         onChange: (value) {},
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                       NeumorphicInputField(
-                        prefixIcon: const Icon(Icons.mail_outline),
+                        prefixIcon: Icon(
+                          Icons.mail_outline,
+                          color: Colors.black,
+                        ),
                         text: "Alamat Email",
                         onChange: (value) {},
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                       DescriptionTextField(
                         text: "pertanyaan dan tanggapan...",
                         onChange: (value) {},
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                       ClipRRect(
@@ -420,14 +441,14 @@ class Footer extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {},
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(const Color(0xFFDF6951)),
+                            backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
                             padding: MaterialStateProperty.all(
-                                const EdgeInsets.symmetric(vertical: 20, horizontal: 25)),
-                            textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 30)),
+                                EdgeInsets.symmetric(vertical: 20, horizontal: 25)),
+                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30)),
                           ),
                           child: Text(
                             "submit".toUpperCase(),
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Color(0xFFECECEC),
                               fontSize: 16.88,
                               fontFamily: 'Archivo Black',
@@ -437,7 +458,7 @@ class Footer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                     ],
@@ -447,10 +468,10 @@ class Footer extends StatelessWidget {
             ],
           ),
           Container(
-            color: Colors.black,
+            color: Color(0xFF1E1E1E),
             height: 50,
             alignment: Alignment.center,
-            child: const Text(
+            child: Text(
               'Copyright © 2024 Saba Jogja. All rights reserved',
               style: TextStyle(
                 color: Colors.white,
@@ -473,14 +494,14 @@ Widget FooterButton({
   required Text textWidget,
 }) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+    margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
     width: 150,
     child: GestureDetector(
       onTap: onTap,
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: AnimatedContainer(
-          duration: const Duration(seconds: 1),
+          duration: Duration(seconds: 1),
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
