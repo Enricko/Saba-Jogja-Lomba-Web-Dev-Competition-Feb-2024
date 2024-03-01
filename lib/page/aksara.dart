@@ -92,7 +92,7 @@ class Aksara extends StatelessWidget {
                         fontSize: 18,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
-                              height: 2,
+                        height: 2,
                       ),
                     ),
                   ),
@@ -139,20 +139,6 @@ class Aksara extends StatelessWidget {
                           ),
                         ],
                       ),
-                      foregroundDecoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.black.withOpacity(.7),
-                            Colors.transparent,
-                            Colors.transparent,
-                            Colors.black.withOpacity(.7)
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          stops: [0, 0.2, 0.8, 1],
-                        ),
-                      ),
                     ),
                   ),
                 ),
@@ -188,6 +174,120 @@ class Aksara extends StatelessWidget {
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 112),
+            width: context.width,
+            alignment: Alignment.center,
+            child: Responsive(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                if (context.width < 897.0)
+                  Div(
+                    divison: Division(
+                      colXL: 4,
+                      colL: 5,
+                      colM: 10,
+                      colS: 10,
+                      colXS: 10,
+                    ),
+                    child: Card(
+                      elevation: 10,
+                      shadowColor: Colors.black12,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      child: Container(
+                        height: context.height * .8,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("assets/aksara_pasangan.png"),
+                            fit: BoxFit.cover,
+                          ),
+                          boxShadow: [
+                            new BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 20.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                Div(
+                  divison: Division(
+                    colXL: 6,
+                    colL: 5,
+                    colM: 10,
+                    colS: 10,
+                    colXS: 10,
+                  ),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 25),
+                          child: Text(
+                            "aksara_pasangan_desc".tr,
+                            textAlign: TextAlign.justify,
+                            style: context.theme.textTheme.bodyMedium!.copyWith(
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              height: 2,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                if (context.width > 897.0)
+                  Div(
+                    divison: Division(
+                      colXL: 4,
+                      colL: 5,
+                      colM: 10,
+                      colS: 10,
+                      colXS: 10,
+                    ),
+                    child: Card(
+                      elevation: 10,
+                      shadowColor: Colors.black12,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      child: Container(
+                        height: context.height * .8,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("assets/aksara_pasangan.png"),
+                            fit: BoxFit.cover,
+                          ),
+                          boxShadow: [
+                            new BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 20.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),
