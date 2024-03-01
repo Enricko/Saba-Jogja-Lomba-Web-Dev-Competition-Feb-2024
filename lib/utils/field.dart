@@ -15,7 +15,7 @@ class NeumorphicInputField extends StatelessWidget {
     return PrimaryContainer(
       child: TextField(
         onChanged: onChange,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
+        style: const TextStyle(fontSize: 18, color: Colors.black),
         controller: TextEditingController(),
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
@@ -48,7 +48,7 @@ class DescriptionTextField extends StatelessWidget {
       child: TextField(
         onChanged: onChange,
         maxLines: 6,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
+        style: const TextStyle(fontSize: 18, color: Colors.black),
         controller: TextEditingController(),
         decoration: InputDecoration(
             contentPadding: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),

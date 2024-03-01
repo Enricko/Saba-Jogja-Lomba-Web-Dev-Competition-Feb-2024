@@ -98,7 +98,11 @@ class Footer extends StatelessWidget {
                                 ),
                                 FooterButton(
                                   context: context,
-                                  onTap: () {},
+                                  onTap: () {
+
+                    Get.offNamed("/aksara");
+                    controllerNavbar.scrollOffset.value = 0.0;
+                                  },
                                   textWidget: Text(
                                     "navbar_script".tr.toUpperCase(),
                                     style: TextStyle(
@@ -132,7 +136,11 @@ class Footer extends StatelessWidget {
                                     ),
                                     FooterButton(
                                       context: context,
-                                      onTap: () {},
+                                      onTap: () {
+
+                    Get.offNamed("/social_life");
+                    controllerNavbar.scrollOffset.value = 0.0;
+                                      },
                                       textWidget: Text(
                                         "social_life".tr.toUpperCase(),
                                         style: TextStyle(
@@ -280,7 +288,7 @@ class Footer extends StatelessWidget {
                                 'Partner',
                                 style: TextStyle(
                                   color: context.theme.textTheme.titleLarge!.color,
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
                                   height: 0,
@@ -301,7 +309,7 @@ class Footer extends StatelessWidget {
                                 'Download on App',
                                 style: TextStyle(
                                   color: context.theme.textTheme.titleLarge!.color,
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
                                   height: 0,
@@ -326,7 +334,7 @@ class Footer extends StatelessWidget {
                                 'Follow us on',
                                 style: TextStyle(
                                   color: context.theme.textTheme.titleLarge!.color,
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.w800,
                                   height: 0,
@@ -339,8 +347,8 @@ class Footer extends StatelessWidget {
                                     child: Image.asset(
                                       "assets/footer/Facebook.png",
                                       scale: .5,
-                                      width: 75,
-                                      height: 75,
+                                      width: 50,
+                                      height: 50,
                                       filterQuality: FilterQuality.high,
                                     ),
                                   ),
@@ -349,8 +357,8 @@ class Footer extends StatelessWidget {
                                     child: Image.asset(
                                       "assets/footer/Instagram.png",
                                       scale: .5,
-                                      width: 75,
-                                      height: 75,
+                                      width: 50,
+                                      height: 50,
                                       filterQuality: FilterQuality.high,
                                     ),
                                   ),
@@ -359,8 +367,8 @@ class Footer extends StatelessWidget {
                                     child: Image.asset(
                                       "assets/footer/TwitterX.png",
                                       scale: .5,
-                                      width: 75,
-                                      height: 75,
+                                      width: 50,
+                                      height: 50,
                                       filterQuality: FilterQuality.high,
                                     ),
                                   ),
@@ -369,8 +377,8 @@ class Footer extends StatelessWidget {
                                     child: Image.asset(
                                       "assets/footer/YouTube.png",
                                       scale: .5,
-                                      width: 75,
-                                      height: 75,
+                                      width: 50,
+                                      height: 50,
                                       filterQuality: FilterQuality.high,
                                     ),
                                   ),
@@ -401,7 +409,7 @@ class Footer extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: context.theme.textTheme.titleLarge!.color,
-                          fontSize: 16,
+                          fontSize: 18,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600,
                           height: 0,

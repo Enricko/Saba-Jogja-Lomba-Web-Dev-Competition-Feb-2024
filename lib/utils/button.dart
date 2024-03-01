@@ -124,6 +124,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       child: DropdownButton<String>(
         focusColor: Colors.transparent,
         onChanged: (String? value) {
+          Get.offNamed("/${value!}");
+          controllerNavbar.scrollOffset.value = 0.0;
           // dropdownValue = value!;
         },
         hint: Text(

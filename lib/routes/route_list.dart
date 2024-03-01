@@ -1,4 +1,6 @@
+import 'package:budaya_jogja/page/aksara.dart';
 import 'package:budaya_jogja/page/home.dart';
+import 'package:budaya_jogja/page/social_life.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,6 +33,22 @@ class RouteList {
     GetPage(
       name: "/about_us",
       page: () => AboutUs(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/social_life",
+      page: () => SocialLife(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/aksara",
+      page: () => Aksara(),
       binding: BindingsBuilder(() {
         Get.put(ThemeController());
         Get.put(TranslateController());

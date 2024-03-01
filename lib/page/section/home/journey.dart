@@ -67,6 +67,7 @@ class Journey extends StatelessWidget {
                                 fontSize: 18,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w400,
+                              height: 2,
                               ),
                             ),
                           ),

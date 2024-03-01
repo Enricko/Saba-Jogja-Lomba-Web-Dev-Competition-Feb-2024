@@ -7,7 +7,7 @@ class Themes {
     textTheme: TextTheme(
       headlineSmall: TextStyle(
         color: Colors.black,
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
       // ...other text styles
@@ -20,7 +20,7 @@ class Themes {
     textTheme: TextTheme(
       headlineSmall: TextStyle(
         color: Colors.white,
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
       // ...other text styles with adjusted colors

@@ -19,9 +19,20 @@ class Culinary extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 112),
           width: context.width,
-          alignment: Alignment.center,
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            image: DecorationImage(
+              image: AssetImage("assets/angkringan.png"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.2),
+                BlendMode.srcATop,
+              ),
+            ),
+          ),
           child: Responsive(
-            crossAxisAlignment: WrapCrossAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.start,
             children: [
               Div(
                 divison: Division(
@@ -30,6 +41,11 @@ class Culinary extends StatelessWidget {
                   colM: 10,
                   colS: 10,
                   colXS: 10,
+                  offsetXL: 1,
+                  offsetL: 1,
+                  offsetM: 1,
+                  offsetS: 1,
+                  offsetXS: 1,
                 ),
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
@@ -57,6 +73,7 @@ class Culinary extends StatelessWidget {
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
+                              height: 2,
                           ),
                         ),
                       ),

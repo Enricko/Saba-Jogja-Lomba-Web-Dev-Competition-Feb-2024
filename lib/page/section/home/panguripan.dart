@@ -99,9 +99,10 @@ class Panguripan extends StatelessWidget {
                           "panguripan".tr,
                           textAlign: TextAlign.justify,
                           style: context.theme.textTheme.bodyMedium!.copyWith(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
+                              height: 2,
                           ),
                         ),
                       ),

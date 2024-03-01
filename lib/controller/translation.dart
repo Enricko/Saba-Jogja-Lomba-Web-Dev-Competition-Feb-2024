@@ -39,7 +39,7 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "en_US",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
               ),
             ),
           ],
@@ -61,7 +61,7 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "id_ID",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
               ),
             ),
           ],
@@ -83,7 +83,7 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "jw_ID",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
               ),
             ),
           ],
@@ -109,16 +109,25 @@ class GlobalTranslation extends Translations {
           "navbar_script": "script",
           "navbar_culture": "culture",
           "navbar_galeri": "galery",
-          "navbar_about_us": "about us",
-          "social_life": "social life",
+          "navbar_about_us": "About Us",
+          "social_life": "Social Life",
           "event": "Event",
           "warisan": "inheritance",
           "travel": "travel",
           "places": "places",
-          "kuliner": "culinary",
+          "kuliner": "Culinary",
           "region_of": "The Special Region of",
           "show_more": "show more",
           "culinary_title": "Explore all the taste",
+          "The Humble Citizen of":"The Humble Citizen of",
+          "sopan_santun":"politeness",
+          "gotong_royong":"Mutual cooperation",
+          "The Beautiful Language of":"The Beautiful Language of",
+          "aksara_carakan_desc":"The modern Javanese script only uses 20 consonant sounds and 20 basic characters which are then called the nglegena script (ꦲꦏ꧀ꦱꦫꦔ꧀ꦭꦼꦒꦼꦤ). Some of the remaining characters were then converted into murda script (ꦲꦏ꧀ꦱꦫꦩꦸꦂꦢ) to write respected titles and names, both the names of legendary figures (e.g. Bima written ꦨꦶꦩ) and real ones (e.g. Pakubuwana written ꦦꦑꦸꦨꦸꦮꦟ). Of the 20 legendary scripts, only 9 characters have the murda form, therefore the use of murda is not identical to the use of capital letters in Latin spelling",
+          "aksara_jawa_desc":"Javanese script, also known as Hanacaraka, is a writing system steeped in history and cultural richness. This script is used to write Javanese and has deep roots in Javanese literary, religious and cultural traditions. Understanding Javanese script is not just about learning a writing system, but also about understanding the extraordinary cultural heritage of the island of Java. Through learning Javanese script, you will enter a fascinating world where each character has its own meaning and beauty. Explore the history, philosophy and aesthetics behind each stroke of script, and discover how this writing is a window that reveals the soul and wisdom of Javanese culture.",
+          "gotong_royong_desc":"The people of Yogyakarta are known for their strong spirit of mutual cooperation and ability to work together in various activities. The concept of mutual cooperation has become an integral part of their daily lives, where people help each other to achieve common goals. Starting from cleaning the environment, renovating houses, to holding religious events, mutual cooperation has always been a practice carried out with great enthusiasm and care. Not only that, in emergency situations or natural disasters, the people of Yogyakarta are always ready to act quickly and work together to help those in need. This spirit of cooperation reflects the togetherness and solidarity that is deeply rooted in the culture and values ​​of Yogyakarta society, making it a strong and united community in facing various challenges.",
+          "sopan_santun_desc":"In Yogyakarta, the people have highly respected values ​​of politeness. Ethics and manners are an inseparable part of their daily lives. They adhere to customs and traditions that teach the importance of respecting others, especially those who are older or in a higher position. This courtesy is reflected in various interactions, be it in the family, community or in public places. The people of Yogyakarta teach the importance of speaking softly, using polite language, and respecting other people's views. Respect and politeness in communicating are an integral part of the identity of the people of Yogyakarta, which makes it a proud characteristic.",
+          "main_social_desc":"In Yogyakarta, the people are famous for their characteristic hospitality. They are known to be friendly and warm in welcoming guests, both local and foreign tourists. This friendliness is reflected in various aspects of daily life, from interactions in traditional markets to meeting on city streets. Apart from that, the people of Yogyakarta are also famous for their love of local culture and traditions. They are very proud of their cultural heritage, such as dance, carvings and traditional music, which are passed down from generation to generation. The spirit of mutual cooperation is also strong in Yogyakarta, where people often work together in various social and religious activities. This all reflects the inclusive and harmonious attitude that is characteristic of Yogyakarta society.",
           "about_yogya":
               "a region rich in history, culture, and natural beauty. Located in the southern part of Java Island, this province is known as the cultural and educational center of Indonesia. Yogyakarta is home to the magnificent royal palace, the Yogyakarta Palace, which still serves as the residence of the Sultan and his family. In addition, this province is also known for its diversity of traditional arts, such as shadow puppetry, Javanese dance, and gamelan.\n\nThere are so many exciting stories from its history that are worth exploring. Come on, let's delve deeper into the History of Yogyakarta!",
           "panguripan":
@@ -150,8 +159,8 @@ class GlobalTranslation extends Translations {
           "navbar_script": "aksara",
           "navbar_culture": "budaya",
           "navbar_galeri": "galeri",
-          "navbar_about_us": "tentang kami",
-          "social_life": "kehidupan sosial",
+          "navbar_about_us": "Tentang Kami",
+          "social_life": "Kehidupan Sosial",
           "event": "Pertunjukan",
           "warisan": "warisan",
           "travel": "bepergian",
@@ -160,6 +169,15 @@ class GlobalTranslation extends Translations {
           "region_of": "Daerah Istimewa",
           "show_more": "selengkapnya",
           "culinary_title": "Jelajahi semua rasanya",
+          "The Humble Citizen of":"Warga Negara yang Rendah Hati",
+          "sopan_santun":"Sopan Santun",
+          "gotong_royong":"Gotong Royong",
+          "The Beautiful Language of":"Bahasa Yang Indah dari",
+          "aksara_carakan_desc":"Aksara Jawa modern hanya menggunakan 20 bunyi konsonan dan 20 aksara dasar yang kemudian disebut sebagai aksara nglegena (ꦲꦏ꧀ꦱꦫꦔ꧀ꦭꦼꦒꦼꦤ). Sebagian aksara yang tersisa kemudian dialihfungsikan sebagai aksara murda (ꦲꦏ꧀ꦱꦫꦩꦸꦂꦢ) untuk menuliskan gelar dan nama yang dihormati, baik nama tokoh legenda (misal Bima ditulis ꦨꦶꦩ) maupun nyata (misal Pakubuwana ditulis ꦦꦑꦸꦨꦸꦮꦟ). Dari 20 aksara nglegena, hanya 9 aksara yang mempunyai bentuk murda, oleh karena itu penggunaan murda tidak identik dengan penggunaan huruf kapital di dalam ejaan Latin",
+          "aksara_jawa_desc":"Aksara Jawa, juga dikenal sebagai Hanacaraka, adalah sistem tulisan yang kaya akan sejarah dan kekayaan budaya. Aksara ini digunakan untuk menuliskan bahasa Jawa dan memiliki akar yang dalam dalam tradisi sastra, agama, dan kebudayaan Jawa. Memahami aksara Jawa bukan hanya tentang belajar sebuah sistem tulisan, tetapi juga tentang memahami warisan budaya yang luar biasa dari pulau Jawa. Melalui mempelajari aksara Jawa, Anda akan memasuki dunia yang mempesona di mana setiap karakter memiliki makna dan keindahan tersendiri. Jelajahi sejarah, filosofi, dan estetika di balik setiap goresan aksara, dan temukan bagaimana tulisan ini menjadi jendela yang mengungkapkan jiwa dan kearifan budaya Jawa.",
+          "gotong_royong_desc":"Masyarakat Yogyakarta dikenal dengan semangat gotong royong yang kuat dan kemampuan untuk bekerja sama dalam berbagai kegiatan. Konsep gotong royong telah menjadi bagian integral dari kehidupan sehari-hari mereka, di mana orang-orang saling membantu satu sama lain untuk mencapai tujuan bersama. Mulai dari membersihkan lingkungan, merenovasi rumah, hingga mengadakan acara keagamaan, gotong royong selalu menjadi praktek yang dijalankan dengan antusiasme dan kepedulian yang tinggi. Tidak hanya itu, dalam situasi darurat atau bencana alam, masyarakat Yogyakarta selalu siap bertindak cepat dan bergotong royong untuk membantu mereka yang membutuhkan. Semangat bekerja sama ini mencerminkan kebersamaan dan solidaritas yang mengakar kuat dalam budaya dan nilai-nilai masyarakat Yogyakarta, menjadikannya komunitas yang kuat dan bersatu dalam menghadapi berbagai tantangan.",
+          "sopan_santun_desc":"Di Yogyakarta, masyarakatnya memiliki nilai-nilai sopan santun yang sangat dijunjung tinggi. Etika dan tata krama menjadi bagian tak terpisahkan dari kehidupan sehari-hari mereka. Mereka memegang teguh adat dan tradisi yang mengajarkan pentingnya menghormati sesama, terutama yang lebih tua atau yang memiliki kedudukan yang lebih tinggi. Sopan santun ini tercermin dalam berbagai interaksi, baik itu di lingkungan keluarga, masyarakat, atau di tempat umum. Masyarakat Yogyakarta mengajarkan pentingnya berbicara dengan lembut, menggunakan bahasa yang sopan, dan menghargai pandangan orang lain. Sikap hormat dan kesantunan dalam berkomunikasi menjadi bagian integral dari identitas masyarakat Yogyakarta, yang menjadikannya salah satu ciri khas yang membanggakan.",
+          "main_social_desc":"Di Yogyakarta, masyarakatnya terkenal dengan keramahan yang menjadi ciri khasnya. Mereka dikenal ramah dan hangat dalam menyambut tamu, baik itu wisatawan lokal maupun mancanegara. Keramahan ini tercermin dalam berbagai aspek kehidupan sehari-hari, mulai dari interaksi di pasar tradisional hingga saat bertemu di jalan-jalan kota. Selain itu, masyarakat Yogyakarta juga terkenal dengan kecintaannya terhadap budaya dan tradisi lokal. Mereka sangat bangga akan warisan budaya mereka, seperti tari, seni ukir, dan musik tradisional, yang diwariskan dari generasi ke generasi. Semangat gotong royong juga kuat di Yogyakarta, di mana masyarakat sering bekerja sama dalam berbagai kegiatan sosial dan keagamaan. Ini semua mencerminkan sikap inklusif dan harmonis yang menjadi ciri khas masyarakat Yogyakarta.",
           "about_yogya":
               "sebuah wilayah yang kaya akan sejarah, budaya, dan keindahan alamnya. Terletak di bagian selatan Pulau Jawa, provinsi ini dikenal sebagai pusat kebudayaan dan  di Indonesia. Yogyakarta merupakan rumah bagi istana kerajaan yang megah, Keraton Yogyakarta, yang masih menjadi tempat tinggal bagi Sultan dan keluarganya. Selain itu, provinsi ini juga dikenal dengan keberagaman seni tradisionalnya, seperti wayang kulit, tari Jawa, dan gamelan.\n\nAda begitu banyak cerita seru dari sejarahnya yang sayang untuk dilewatkan. Ayo, kita eksplor lebih dalam tentang Sejarah Yogyakarta!",
           "panguripan":
@@ -201,6 +219,15 @@ class GlobalTranslation extends Translations {
           "region_of": "Wilayah Khusus Kab",
           "show_more": "nuduhake liyane",
           "culinary_title": "Jelajahi kabeh rasa",
+          "The Humble Citizen of":"Warga Asor saka",
+          "sopan_santun":"unggah-ungguh",
+          "gotong_royong":"Gotong Royong",
+          "The Beautiful Language of":"Basa Endah saka",
+          "aksara_carakan_desc":"Aksara Jawa modern mung nggunakake 20 konsonan lan 20 aksara dhasar kang banjur diarani aksara nglegena (ꦲꦏ꧀ꦱꦫꦔ꧀ꦭꦼꦒꦼꦤ). Sawetara karakter sing isih ana banjur diowahi dadi aksara murda (ꦲꦏ꧀ꦱꦫꦩꦸꦂꦢ) kanggo nulis judhul lan jeneng sing dihormati, loro jeneng tokoh legenda (kayata Bima sing ditulis ꦨꦶꦩ) lan sing asli (e.gritꦮꦮꦮꦮꦮ) ꦟ). Saka 20 aksara legenda mung 9 aksara kang awujud murda, mula panganggone aksara murda ora padha karo panganggone aksara gedhe ing ejaan latin.",
+          "aksara_jawa_desc":"Aksara Jawa, uga diarani Hanacaraka, iku sawijining sistem panulisan kang ngandhut sajarah lan kasugihan budaya. Aksara iki digunakake kanggo nulis basa Jawa lan nduweni oyod sing jero ing sastra Jawa, agama lan tradhisi budaya. Mangertosi aksara Jawa menika boten namung kangge nyinaoni sistem seratan, nanging ugi kangge mangertosi warisan budaya pulo Jawi ingkang mirunggan. Liwat sinau aksara Jawa, sampeyan bakal mlebu ing jagad sing narik kawigaten saben paraga nduweni makna lan kaendahan dhewe-dhewe. Jelajahi sejarah, filosofi lan estetika sing ana ing saben guratan naskah, lan temokake kepriye tulisan iki minangka jendhela sing mbukak jiwa lan kawicaksanan budaya Jawa.",
+          "gotong_royong_desc":"Masarakat Ngayogyakarta misuwur kanthi semangat gotong royong lan saged gotong royong ing maneka warni kegiatan. Konsep gotong royong wis dadi bagian integral saka urip saben dinane, ing ngendi wong-wong padha tulung-tinulung kanggo nggayuh tujuan umum. Wiwit saka reresik lingkungan, renovasi omah, nganakake acara keagamaan, gotong royong tansah dadi praktik sing ditindakake kanthi semangat lan ati-ati. Ora mung iku, ing kahanan darurat utawa bencana alam, masyarakat Ngayogyakarta tansah siyaga tumindak kanthi cepet lan gotong royong kanggo nulungi wong-wong sing butuh. Semangat gotong royong menika nggambaraken kebersamaan lan solidaritas ingkang rumiyin wonten ing kabudayan lan nilai-nilai masyarakat Yogyakarta, saengga dados masyarakat ingkang kiat lan rukun ngadhepi maneka tantangan.",
+          "sopan_santun_desc":"Wonten ing Ngayogyakarta masarakat nggadahi nilai-nilai unggah-ungguh. Etika lan tata krama minangka perangan kang ora bisa dipisahake saka urip saben dinane. Padha netepi adat lan tradhisi sing mulangake pentinge ngajeni wong liya, utamane sing luwih tuwa utawa luwih dhuwur. Sopan santun menika kagambaraken wonten ing maneka warni sesrawungan, wonten ing kulawarga, masarakat utawi ing papan-papan umum. Tiyang Ngayogyakarta mulangaken wigatosipun wicantenan ingkang alus, ngginakaken basa krama, saha ngajeni dhateng pamanggihipun tiyang sanes. Unggah-ungguh lan unggah-ungguh sajrone komunikasi mujudake wujud jati diri masyarakat Ngayogyakarta kang ndadekake ciri kang dibanggakake.",
+          "main_social_desc":"Wonten ing Ngayogyakarta, masarakatipun misuwur kanthi sipat silaturahmi. Wong-wong iki dikenal ramah lan ramah nalika nampa tamu, turis lokal lan manca. Ramah-ramah iki kacetha ing macem-macem aspek urip saben dina, saka interaksi ing pasar tradisional kanggo ketemu ing dalan kutha. Kajawi saking menika, masarakat Ngayogyakarta ugi misuwur kanthi remen kaliyan budaya lan tradhisi lokal. Banget bangga karo warisan budaya, kayata tari, ukir lan musik tradhisional, kang diwarisake saka generasi kanggo generasi. Semangat gotong royong ugi kiyat wonten ing Ngayogyakarta ingkang asring makarya sesarengan ing maneka warni kegiatan sosial lan keagamaan. Iki kabeh nggambarake sikap inklusif lan harmonis sing dadi ciri masyarakat Yogyakarta.",
           "about_yogya":
               "Daerah sing sugih sajarah, budaya, lan kaendahan alam. Dumunung ing sisih kidul Pulo Jawa, provinsi iki dikenal minangka pusat budaya lan pendhidhikan ing Indonesia. dadi papan panggonane Sultan lan kulawargane.Saliyane iku provinsi iki uga misuwur kanthi maneka warna kesenian tradhisional, kayata wayang kulit, tari Jawa, lan gamelan.\n\nAna akeh crita sing nyenengake saka sejarahe sing kudu ditelusuri. Ayo, kita nliti sejarah Ngayogyakarta luwih jero!",
           "panguripan":
