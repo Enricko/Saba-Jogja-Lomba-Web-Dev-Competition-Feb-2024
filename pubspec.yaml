@@ -70,8 +70,11 @@ flutter:
   assets:
     - assets/
     - assets/about_us.png
+    - assets/aksara_carakan.png
     - assets/aksara_jawa.png
-    - assets/aksara_jawa.png
+    - assets/aksara_jawa2.png
+    - assets/aksara_pasangan.png
+    - assets/angkringan.png
     - assets/awan1.png
     - assets/awan2.png
     - assets/awan3.png
@@ -80,6 +83,7 @@ flutter:
     - assets/candi.png
     - assets/event.png
     - assets/gedung putih.png
+    - assets/gotong_royong.png
     - assets/gunungan_kuning.png
     - assets/image1.png
     - assets/image2.png
@@ -90,9 +94,11 @@ flutter:
     - assets/image7.png
     - assets/kuda.png
     - assets/logo.png
+    - assets/main_social.png
     - assets/mountain.png
     - assets/panguripan.png
     - assets/pattern.png
+    - assets/sopan_santun.png
     - assets/tugu.png
     - assets/upacara.png
     - assets/journey/

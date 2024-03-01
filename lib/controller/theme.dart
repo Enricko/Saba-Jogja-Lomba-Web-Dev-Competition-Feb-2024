@@ -29,6 +29,6 @@ class ThemeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    controller.value.dispose();
+    // controller.value.dispose();
   }
 }

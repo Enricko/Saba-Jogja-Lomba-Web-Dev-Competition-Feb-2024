@@ -23,68 +23,6 @@ class Culinary extends StatelessWidget {
           child: Responsive(
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              if (context.width < 897.0)
-                Div(
-                  divison: Division(
-                    colXL: 5,
-                    colL: 5,
-                    colM: 10,
-                    colS: 10,
-                    colXS: 10,
-                  ),
-                  child: Wrap(
-                    alignment: WrapAlignment.center,
-                    children: controller.culinaryList.value.map((e) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 150,
-                            width: 150,
-                            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                image: AssetImage(e.value['image']),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            foregroundDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              gradient: LinearGradient(
-                                colors: [
-                                  Colors.black.withOpacity(.7),
-                                  Colors.transparent,
-                                  Colors.transparent,
-                                  Colors.black.withOpacity(.7)
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                stops: [0, 0.2, 0.8, 1],
-                              ),
-                            ),
-                          ),
-                          Text(
-                            e.value['title'],
-                            textAlign: TextAlign.justify,
-                            style: context.theme.textTheme.bodyMedium!.copyWith(
-                              fontSize: 21.12,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                        ],
-                      );
-                    }).toList(),
-                  ),
-                ),
               Div(
                 divison: Division(
                   colXL: 6,
@@ -147,68 +85,6 @@ class Culinary extends StatelessWidget {
                   ),
                 ),
               ),
-              if (context.width >= 897.0)
-                Div(
-                  divison: Division(
-                    colXL: 5,
-                    colL: 5,
-                    colM: 10,
-                    colS: 10,
-                    colXS: 10,
-                  ),
-                  child: Wrap(
-                    alignment: WrapAlignment.center,
-                    children: controller.culinaryList.value.map((e) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 150,
-                            width: 150,
-                            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                image: AssetImage(e.value['image']),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            foregroundDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              gradient: LinearGradient(
-                                colors: [
-                                  Colors.black.withOpacity(.7),
-                                  Colors.transparent,
-                                  Colors.transparent,
-                                  Colors.black.withOpacity(.7)
-                                ],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                stops: [0, 0.2, 0.8, 1],
-                              ),
-                            ),
-                          ),
-                          Text(
-                            e.value['title'],
-                            textAlign: TextAlign.justify,
-                            style: context.theme.textTheme.bodyMedium!.copyWith(
-                              fontSize: 21.12,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                        ],
-                      );
-                    }).toList(),
-                  ),
-                ),
             ],
           ),
         ),
