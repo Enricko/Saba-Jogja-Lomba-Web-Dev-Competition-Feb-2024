@@ -17,6 +17,8 @@ class DeskripsiKebudayaan extends StatelessWidget {
           alignment: Alignment.center,
           child: Responsive(
             crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.center,
             children: [
               if (context.width < 897.0)
                 Card(

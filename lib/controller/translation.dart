@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 
 class TranslateController extends GetxController {
   var selectedLanguage = "en_US".obs;
+  var controllerNavbar = Get.find<NavbarController>();
 
   void onChange(String value) {
     GetStorage().write("translate", value);
@@ -39,7 +40,9 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "en_US",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : (!context.isDarkMode
+                              ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                              : null),
               ),
             ),
           ],
@@ -61,7 +64,9 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "id_ID",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : (!context.isDarkMode
+                              ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                              : null),
               ),
             ),
           ],
@@ -83,7 +88,9 @@ class TranslateController extends GetxController {
             TextSpan(
               text: "jw_ID",
               style: context.textTheme.titleMedium!.copyWith(
-                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : null,
+                color: Get.find<NavbarController>().scrollBool() && Get.currentRoute == "/" ? Colors.black : (!context.isDarkMode
+                              ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                              : null),
               ),
             ),
           ],

@@ -87,7 +87,11 @@ class Button {
                   child: Text(
                     text.toUpperCase(),
                     style: context.theme.textTheme.titleMedium!.copyWith(
-                      color: controllerNavbar.scrollBool() && isShow ? Colors.black : null,
+                      color: controllerNavbar.scrollBool() && isShow
+                          ? Colors.black
+                          : (!context.isDarkMode
+                              ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                              : null),
                     ),
                   ),
                 ),
@@ -131,7 +135,11 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         hint: Text(
           widget.title.toUpperCase(),
           style: context.theme.textTheme.titleMedium!.copyWith(
-            color: controllerNavbar.scrollBool() && widget.isShow ? Colors.black : null,
+            color: controllerNavbar.scrollBool() && widget.isShow
+                          ? Colors.black
+                          : (!context.isDarkMode
+                              ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                              : null),
           ),
         ),
         underline: const SizedBox(),
@@ -142,7 +150,9 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
           Icons.keyboard_arrow_down,
           color: controllerNavbar.scrollBool() && widget.isShow
               ? Colors.black
-              : (context.isDarkMode ? Colors.white : Colors.black),
+              : (!context.isDarkMode
+                  ? (controllerNavbar.scrollBool() ? Colors.white : Colors.black)
+                  : (context.isDarkMode ? Colors.white : Colors.black)),
         ),
         items: widget.options.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(

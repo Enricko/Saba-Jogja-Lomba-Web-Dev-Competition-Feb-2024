@@ -321,8 +321,14 @@ class Footer extends StatelessWidget {
                               Image.asset(
                                 "assets/footer/image 56.png",
                               ),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Image.asset(
                                 "assets/footer/image 57.png",
+                              ),
+                              SizedBox(
+                                height: 15,
                               ),
                             ],
                           ),

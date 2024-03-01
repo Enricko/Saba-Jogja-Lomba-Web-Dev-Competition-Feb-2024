@@ -19,7 +19,37 @@ class History extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Mountain(),
+          Container(
+            width: double.infinity,
+            height: 520,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              image: DecorationImage(
+                image: AssetImage("assets/history.png"),
+                fit: BoxFit.cover,
+              ),
+              boxShadow: [
+                new BoxShadow(
+                  color: Colors.black,
+                  blurRadius: 20.0,
+                ),
+              ],
+            ),
+            foregroundDecoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black.withOpacity(.7),
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.black.withOpacity(.7)
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [0, 0.2, 0.8, 1],
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 50, horizontal: 25),
             child: Responsive(

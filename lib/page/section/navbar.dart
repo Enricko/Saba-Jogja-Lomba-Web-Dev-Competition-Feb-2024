@@ -42,56 +42,54 @@ class Navbar extends StatelessWidget {
                 ),
               ),
               if (context.width > 1000)
-                Obx(
-                  () => Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Button().NavbarButton(
-                        context: context,
-                        isShow: isShow,
-                        onTap: () {
-                          Get.offNamed("/history");
-                          controllerNavbar.scrollOffset.value = 0.0;
-                        },
-                        text: "navbar_history".tr,
-                      ),
-                      Button().NavbarButton(
-                        context: context,
-                        isShow: isShow,
-                        onTap: () {
-                          Get.offNamed("/aksara");
-                          controllerNavbar.scrollOffset.value = 0.0;
-                        },
-                        text: "navbar_script".tr,
-                      ),
-                      DropdownButtonExample(
-                        title: "navbar_culture".tr.toUpperCase(),
-                        options: ["social_life", "event", "warisan"],
-                        isShow: isShow,
-                      ),
-                      DropdownButtonExample(
-                        title: "travel".tr.toUpperCase(),
-                        options: ["places", "kuliner"],
-                        isShow: isShow,
-                      ),
-                      Button().NavbarButton(
-                        context: context,
-                        isShow: isShow,
-                        onTap: () {},
-                        text: "navbar_galeri".tr,
-                      ),
-                      Button().NavbarButton(
-                        context: context,
-                        isShow: isShow,
-                        onTap: () {
-                          Get.offNamed("/about_us");
-                          controllerNavbar.scrollOffset.value = 0.0;
-                        },
-                        text: "navbar_about_us".tr,
-                      ),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Button().NavbarButton(
+                      context: context,
+                      isShow: isShow,
+                      onTap: () {
+                        Get.offNamed("/history");
+                        controllerNavbar.scrollOffset.value = 0.0;
+                      },
+                      text: "navbar_history".tr,
+                    ),
+                    Button().NavbarButton(
+                      context: context,
+                      isShow: isShow,
+                      onTap: () {
+                        Get.offNamed("/aksara");
+                        controllerNavbar.scrollOffset.value = 0.0;
+                      },
+                      text: "navbar_script".tr,
+                    ),
+                    DropdownButtonExample(
+                      title: "navbar_culture".tr.toUpperCase(),
+                      options: ["social_life", "event", "warisan"],
+                      isShow: isShow,
+                    ),
+                    DropdownButtonExample(
+                      title: "travel".tr.toUpperCase(),
+                      options: ["places", "kuliner"],
+                      isShow: isShow,
+                    ),
+                    Button().NavbarButton(
+                      context: context,
+                      isShow: isShow,
+                      onTap: () {},
+                      text: "navbar_galeri".tr,
+                    ),
+                    Button().NavbarButton(
+                      context: context,
+                      isShow: isShow,
+                      onTap: () {
+                        Get.offNamed("/about_us");
+                        controllerNavbar.scrollOffset.value = 0.0;
+                      },
+                      text: "navbar_about_us".tr,
+                    ),
+                  ],
                 ),
               Align(
                 alignment: Alignment.centerRight,

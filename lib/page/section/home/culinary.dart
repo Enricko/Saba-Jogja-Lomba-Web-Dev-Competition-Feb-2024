@@ -25,6 +25,7 @@ class Culinary extends StatelessWidget {
             image: DecorationImage(
               image: AssetImage("assets/angkringan.png"),
               fit: BoxFit.cover,
+              filterQuality: FilterQuality.medium,
               colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.2),
                 BlendMode.srcATop,
@@ -60,6 +61,7 @@ class Culinary extends StatelessWidget {
                         style: context.theme.textTheme.titleLarge!.copyWith(
                           fontFamily: "JawaPalsu",
                           fontSize: 50,
+                              color: Color(0xFFECECEC),
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -71,6 +73,7 @@ class Culinary extends StatelessWidget {
                           textAlign: TextAlign.justify,
                           style: context.theme.textTheme.bodyMedium!.copyWith(
                             fontSize: 18,
+                              color: Color(0xFFECECEC),
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                               height: 2,

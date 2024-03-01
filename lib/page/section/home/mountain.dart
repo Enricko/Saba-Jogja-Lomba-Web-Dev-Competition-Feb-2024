@@ -9,7 +9,7 @@ class Mountain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 300,
+      height: 500,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -37,6 +37,6 @@ class Mountain extends StatelessWidget {
           stops: [0, 0.2, 0.8, 1],
         ),
       ),
-    );
+    );  
   }
 }

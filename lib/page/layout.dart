@@ -32,7 +32,8 @@ class Layout extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage("assets/pattern.png"),
                 fit: BoxFit.cover,
-                filterQuality: FilterQuality.high
+                filterQuality: FilterQuality.high,
+                opacity: 0.5
               ),
             ),
             child: child,
