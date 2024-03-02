@@ -99,9 +99,8 @@ class Footer extends StatelessWidget {
                                 FooterButton(
                                   context: context,
                                   onTap: () {
-
-                    Get.offNamed("/aksara");
-                    controllerNavbar.scrollOffset.value = 0.0;
+                                    Get.offNamed("/aksara");
+                                    controllerNavbar.scrollOffset.value = 0.0;
                                   },
                                   textWidget: Text(
                                     "navbar_script".tr.toUpperCase(),
@@ -137,9 +136,8 @@ class Footer extends StatelessWidget {
                                     FooterButton(
                                       context: context,
                                       onTap: () {
-
-                    Get.offNamed("/social_life");
-                    controllerNavbar.scrollOffset.value = 0.0;
+                                        Get.offNamed("/social_life");
+                                        controllerNavbar.scrollOffset.value = 0.0;
                                       },
                                       textWidget: Text(
                                         "social_life".tr.toUpperCase(),
@@ -239,7 +237,10 @@ class Footer extends StatelessWidget {
                                 ),
                                 FooterButton(
                                   context: context,
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.offNamed("/galeri");
+                                    controllerNavbar.scrollOffset.value = 0.0;
+                                  },
                                   textWidget: Text(
                                     "navbar_galeri".tr.toUpperCase(),
                                     style: TextStyle(

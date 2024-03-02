@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       getPages: RouteList.pages,
       initialRoute: "/",
       unknownRoute: GetPage(
-        name: "/",
+        name: "/lost",
         page: () => Center(
           child: Text("Not Found"),
         ),

@@ -9,6 +9,7 @@ import '../controller/navbar.dart';
 import '../controller/theme.dart';
 import '../controller/translation.dart';
 import '../page/about_us.dart';
+import '../page/galeri.dart';
 import '../page/history.dart';
 
 class RouteList {
@@ -49,6 +50,14 @@ class RouteList {
     GetPage(
       name: "/aksara",
       page: () => Aksara(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/galeri",
+      page: () => Galeri(),
       binding: BindingsBuilder(() {
         Get.put(ThemeController());
         Get.put(TranslateController());

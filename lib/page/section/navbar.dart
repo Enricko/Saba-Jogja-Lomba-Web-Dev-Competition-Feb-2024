@@ -77,7 +77,11 @@ class Navbar extends StatelessWidget {
                     Button().NavbarButton(
                       context: context,
                       isShow: isShow,
-                      onTap: () {},
+                      onTap: () {
+
+                    Get.offNamed("/galeri");
+                    controllerNavbar.scrollOffset.value = 0.0;
+                      },
                       text: "navbar_galeri".tr,
                     ),
                     Button().NavbarButton(
