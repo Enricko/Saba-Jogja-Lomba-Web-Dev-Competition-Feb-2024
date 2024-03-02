@@ -1,12 +1,13 @@
+import 'package:budaya_jogja/controller/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
 class Panguripan extends StatelessWidget {
-  const Panguripan({
+  Panguripan({
     super.key,
   });
-
+  var controllerNavbar = Get.find<NavbarController>();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -102,14 +103,17 @@ class Panguripan extends StatelessWidget {
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
-                              height: 2,
+                            height: 2,
                           ),
                         ),
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(18),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.offNamed("/social_life");
+                            controllerNavbar.scrollOffset.value = 0.0;
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
                             padding: MaterialStateProperty.all(EdgeInsets.all(25)),

@@ -43,6 +43,7 @@ dependencies:
   loop_page_view: ^1.2.5
   flutter_rating_bar: ^4.0.1
   flutter_inset_box_shadow: ^1.0.8
+  flutter_dash: ^1.0.0
 
 dev_dependencies:
   flutter_test:
