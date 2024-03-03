@@ -1,5 +1,6 @@
 import 'package:budaya_jogja/page/aksara.dart';
 import 'package:budaya_jogja/page/home.dart';
+import 'package:budaya_jogja/page/places.dart';
 import 'package:budaya_jogja/page/social_life.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,6 +59,14 @@ class RouteList {
     GetPage(
       name: "/galeri",
       page: () => Galeri(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/places",
+      page: () => Places(),
       binding: BindingsBuilder(() {
         Get.put(ThemeController());
         Get.put(TranslateController());
