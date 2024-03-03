@@ -66,7 +66,7 @@ class Navbar extends StatelessWidget {
                     ),
                     DropdownButtonExample(
                       title: "navbar_culture".tr.toUpperCase(),
-                      options: ["social_life", "event", "warisan"],
+                      options: ["social_life", "event"],
                       isShow: isShow,
                     ),
                     DropdownButtonExample(

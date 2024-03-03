@@ -154,25 +154,12 @@ class Footer extends StatelessWidget {
                                     ),
                                     FooterButton(
                                       context: context,
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.offNamed("/event");
+                                        controllerNavbar.scrollOffset.value = 0.0;
+                                      },
                                       textWidget: Text(
                                         "event".tr.toUpperCase(),
-                                        style: TextStyle(
-                                          color: context.theme.textTheme.titleLarge!.color,
-                                          fontSize: 14,
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w300,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    FooterButton(
-                                      context: context,
-                                      onTap: () {},
-                                      textWidget: Text(
-                                        "warisan".tr.toUpperCase(),
                                         style: TextStyle(
                                           color: context.theme.textTheme.titleLarge!.color,
                                           fontSize: 14,
@@ -206,7 +193,10 @@ class Footer extends StatelessWidget {
                                     ),
                                     FooterButton(
                                       context: context,
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.offNamed("/places");
+                                        controllerNavbar.scrollOffset.value = 0.0;
+                                      },
                                       textWidget: Text(
                                         "places".tr.toUpperCase(),
                                         style: TextStyle(
@@ -222,7 +212,10 @@ class Footer extends StatelessWidget {
                                     ),
                                     FooterButton(
                                       context: context,
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.offNamed("/kuliner");
+                                        controllerNavbar.scrollOffset.value = 0.0;
+                                      },
                                       textWidget: Text(
                                         "kuliner".tr.toUpperCase(),
                                         style: TextStyle(

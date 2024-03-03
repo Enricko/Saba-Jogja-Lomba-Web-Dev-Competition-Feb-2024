@@ -587,25 +587,25 @@ class Places extends StatelessWidget {
             ),
           ),
           Container(
-                height: context.height * .7,
-                margin: EdgeInsets.symmetric(vertical: 100,horizontal: 25),
-                color: Colors.transparent,
-                child: LoopPageView.builder(
-                  itemCount: controller.journeyList.value.length,
-                  controller: controller._pageController.value,
-                  scrollDirection: Axis.horizontal,
-                  pageSnapping: false,
-                  itemBuilder: (context, index) {
-                    var data = controller.journeyList.value[index];
-                    return HoverScaleContainer(
-                      image: data['image'],
-                      title: data['title'],
-                      location: data['location'],
-                      rating: data['rating'],
-                    );
-                  },
-                ),
-              ),
+            height: context.height * .7,
+            margin: EdgeInsets.symmetric(vertical: 100, horizontal: 25),
+            color: Colors.transparent,
+            child: LoopPageView.builder(
+              itemCount: controller.journeyList.value.length,
+              controller: controller._pageController.value,
+              scrollDirection: Axis.horizontal,
+              pageSnapping: false,
+              itemBuilder: (context, index) {
+                var data = controller.journeyList.value[index];
+                return HoverScaleContainer(
+                  image: data['image'],
+                  title: data['title'],
+                  location: data['location'],
+                  rating: data['rating'],
+                );
+              },
+            ),
+          ),
           Container(
             width: double.infinity,
             height: 500,
@@ -970,7 +970,6 @@ class _HoverScaleContainerState extends State<HoverScaleContainer> {
     );
   }
 }
-
 
 class CarouselPlacesController extends GetxController {
   Rx<LoopPageController?> _pageController = Rx<LoopPageController?>(null);
