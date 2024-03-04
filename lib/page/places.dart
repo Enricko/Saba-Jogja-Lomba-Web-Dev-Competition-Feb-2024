@@ -45,6 +45,19 @@ class Places extends StatelessWidget {
       "rating": 4.6,
     },
     {
+      "image": "assets/journey/kampung_wisata_tamansari.jpeg",
+      "title": "Kampung Wisata Taman Sari",
+      "location": "Patehan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55133",
+      "rating": 4.6,
+    },
+    {
+      "image": "assets/journey/kraton.png",
+      "title": "Keraton Ngayogyakarta Hadiningrat",
+      "location":
+          "Jl. Rotowijayan Blok No. 1, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta",
+      "rating": 4.6,
+    },
+    {
       "image": "assets/journey/pantai_parangtritis.jpeg",
       "title": "Pantai Parangtritis",
       "location":
