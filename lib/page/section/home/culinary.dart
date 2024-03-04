@@ -6,11 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 
+import '../../../controller/navbar.dart';
+
 class Culinary extends StatelessWidget {
   Culinary({
     super.key,
   });
   var controller = Get.put(CarouselCulinaryController());
+
+  var controllerNavbar = Get.find<NavbarController>();
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,7 @@ class Culinary extends StatelessWidget {
                         style: context.theme.textTheme.titleLarge!.copyWith(
                           fontFamily: "JawaPalsu",
                           fontSize: 50,
-                              color: Color(0xFFECECEC),
+                          color: Color(0xFFECECEC),
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
@@ -73,17 +77,20 @@ class Culinary extends StatelessWidget {
                           textAlign: TextAlign.justify,
                           style: context.theme.textTheme.bodyMedium!.copyWith(
                             fontSize: 18,
-                              color: Color(0xFFECECEC),
+                            color: Color(0xFFECECEC),
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
-                              height: 2,
+                            height: 2,
                           ),
                         ),
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(18),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.offNamed("/kuliner");
+                            controllerNavbar.scrollOffset.value = 0.0;
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
                             padding: MaterialStateProperty.all(EdgeInsets.all(25)),

@@ -8,6 +8,7 @@ class Panguripan extends StatelessWidget {
     super.key,
   });
   var controllerNavbar = Get.find<NavbarController>();
+  
   @override
   Widget build(BuildContext context) {
     return Stack(

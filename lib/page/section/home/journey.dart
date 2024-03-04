@@ -4,10 +4,13 @@ import 'package:responsive_ui/responsive_ui.dart';
 import 'package:loop_page_view/loop_page_view.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../controller/navbar.dart';
+
 class Journey extends StatelessWidget {
   Journey({super.key});
   var controller = Get.put(CarouselJourneyController());
 
+  var controllerNavbar = Get.find<NavbarController>();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -74,7 +77,11 @@ class Journey extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(18),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+
+                        Get.offNamed("/places");
+                        controllerNavbar.scrollOffset.value = 0.0;
+                              },
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
                                 padding: MaterialStateProperty.all(EdgeInsets.all(25)),

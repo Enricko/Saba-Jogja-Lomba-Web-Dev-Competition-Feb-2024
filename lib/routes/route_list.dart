@@ -11,6 +11,7 @@ import '../controller/navbar.dart';
 import '../controller/theme.dart';
 import '../controller/translation.dart';
 import '../page/about_us.dart';
+import '../page/event.dart';
 import '../page/galeri.dart';
 import '../page/history.dart';
 
@@ -76,6 +77,14 @@ class RouteList {
     GetPage(
       name: "/kuliner",
       page: () => Kuliner(),
+      binding: BindingsBuilder(() {
+        Get.put(ThemeController());
+        Get.put(TranslateController());
+      }),
+    ),
+    GetPage(
+      name: "/event",
+      page: () => Event(),
       binding: BindingsBuilder(() {
         Get.put(ThemeController());
         Get.put(TranslateController());

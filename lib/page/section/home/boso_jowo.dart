@@ -104,7 +104,7 @@ class BosoJowo extends StatelessWidget {
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
-                              height: 2,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -112,9 +112,8 @@ class BosoJowo extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                         child: ElevatedButton(
                           onPressed: () {
-
-                    Get.offNamed("/aksara");
-                    controllerNavbar.scrollOffset.value = 0.0;
+                            Get.offNamed("/aksara");
+                            controllerNavbar.scrollOffset.value = 0.0;
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(Color(0xFFDF6951)),
