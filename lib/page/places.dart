@@ -679,7 +679,7 @@ class Places extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       image: DecorationImage(
-                        image: AssetImage("assets/museum_yogya.png"),
+                        image: AssetImage("assets/taman_budaya.png"),
                         fit: BoxFit.cover,
                         colorFilter: ColorFilter.mode(
                           Colors.black.withOpacity(0.2),

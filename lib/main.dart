@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       translations: GlobalTranslation(),
       locale:
           Locale(GetStorage().read("translate") != null ? GetStorage().read("translate") : "en_US"),
-      title: 'Budaya Yogyakarta',
+      title: 'SabaJogja | Budaya Yogyakarta',
       getPages: RouteList.pages,
       initialRoute: "/",
       unknownRoute: GetPage(
